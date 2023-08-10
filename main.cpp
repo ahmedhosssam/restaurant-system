@@ -38,7 +38,7 @@ int main() {
             a.reports();
             break;
         case 0:
-            return 0;
+            break;
         default:
             cout << "Invalid input! please try again...";
             sleep(3);
