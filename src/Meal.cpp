@@ -46,7 +46,7 @@ void Meal::setData() {
         Ingredient* ingAdd;
         ingAdd = z->search_ing(id);
 
-        cout << ingAdd->getData();
+        ingAdd->getData();
         ingglist[m_countt++] = ingAdd;
 
         cout << "\n  Do you want to add a new ingredient? Press y/n" << endl;
@@ -57,13 +57,13 @@ void Meal::setData() {
         else if (choice == 'n')
             break;
         else {
-            cout << "  Invalid choice, try again" << endl;
+            cout << "Invalid choice, try again" << endl;
             cin >> choice;
         }
     }
 
     for (int i = 0; i < m_countt; ++i) {
-        cout << ingglist[i]->getData();
+        ingglist[i]->getData();
     }
 }
 

@@ -10,20 +10,20 @@ class Ingredient {
         Ingredient();
         Ingredient(string name, double price, int quantity);
         void setData();
+        void getData();
         void update_quantity();
         void update_price();
         void reduceQuantity();
-        double getPrice();
         int getID();
-        string getData();
-        friend istream& operator >>(istream&,Ingredient*);
-        friend ostream& operator <<(ostream&,Ingredient&);
+        double getPrice();
+        friend istream& operator >> (istream&,Ingredient*);
+        friend ostream& operator << (ostream&,Ingredient&);
         virtual ~Ingredient();
 
     private:
         string name;
-        int quantity, id;
         double price;
+        int quantity, id;
 };
 
-#endif // INGREDIANT_H
+#endif 

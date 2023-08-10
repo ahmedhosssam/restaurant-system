@@ -13,18 +13,18 @@ class Stock {
     public:
         Stock();
         void add_ingredient();
-        void add_ingredient(Ingredient* ing);
+        void add_ingredient(Ingredient ing);
         void update_ingredient_quantity();
         void update_ingredient_price();
         void delete_ingredient();
         void display_all();
         int returnIngNum();
-        Ingredient* search_ing(int id);
-        virtual ~Stock();
+        Ingredient search_ing(int id);
+        ~Stock();
 
     private:
         int m_ingCount;
-        vector<Ingredient*> ingList;
+        vector<Ingredient> ingList;
 };
 
 #endif 

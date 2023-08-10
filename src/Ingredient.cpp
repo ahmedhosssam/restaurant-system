@@ -2,7 +2,7 @@
 
 Ingredient::Ingredient() { }
 
-Ingredient::Ingredient(string name, double price, int quantity) : name(name), id(id), price(price), quantity(quantity)
+Ingredient::Ingredient(string name, double price, int quantity) : name(name), price(price), quantity(quantity)
 { }
 
 double Ingredient::getPrice() {
@@ -27,11 +27,11 @@ void Ingredient::setData() {
 }
 
 
-string Ingredient::getData(){
-    return "ID: "+ to_string(id)
-            + " Name: " + name
-            + "\tQuantity: " + to_string(quantity) + " Items\t"
-            + "\tPrice: " + to_string(price) +" \x9c";
+void Ingredient::getData() {
+    cout << "Name: " << name << endl
+         << "Price: " << price << endl
+         << "Quantity: " << quantity << endl;
+    cout << "-------------\n";
 }
 
 void Ingredient::update_quantity() {
@@ -56,7 +56,7 @@ istream& operator >> (istream& in ,Ingredient* i) {
 }
 
 ostream& operator << (ostream& out,Ingredient& i) {
-    cout << i.getData();
+    i.getData();
     return out;
 }
 

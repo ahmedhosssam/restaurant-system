@@ -8,7 +8,7 @@ using namespace std;
 
 int main() {
     int c = -1;
-    Manager a;
+    Manager a; // for layout
     while (c != 0) {
         cout << "Main menu: " << endl << endl
              << "  1. Kitchen" << endl
