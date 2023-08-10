@@ -114,7 +114,7 @@ void Manager::showMenu() {
 void Manager::kitchen(){
     int c = -1;
 
-    while(c != 0){
+    while(c != 0) {
         cout<<"Kitchen: \n\n"
             << "  1.Ingredients\n"
             << "  2.Meal\n"
@@ -124,7 +124,7 @@ void Manager::kitchen(){
 
         cin >> c;
 
-        switch(c){
+        switch(c) {
         case 1:
             system("clear");
             ingredients();
@@ -148,11 +148,11 @@ void Manager::kitchen(){
     }
 }
 
-void Manager::makeOrder(){
+void Manager::makeOrder() {
     r.makeOrder();
 }
 
-void Manager::reports(){
+void Manager::reports() {
     int c = -1;
 
     while(c != 0){

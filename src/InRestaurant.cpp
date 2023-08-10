@@ -1,26 +1,22 @@
 #include "../include/InRestaurant.h"
 
-InRestaurant::InRestaurant(Meal** mealArr, int mealCount, int tableId) : Order(mealArr, mealCount), tableId(tableId)
-{
+InRestaurant::InRestaurant(Meal** mealArr, int mealCount, int tableId) : Order(mealArr, mealCount), tableId(tableId) {
     calcPrice();
 }
 
-void InRestaurant::calcPrice()
-{
+void InRestaurant::calcPrice() {
     total_price = 0;
-    for (int i = 0; i < mealCount; ++i)
-    {
+
+    for (int i = 0; i < mealCount; ++i) {
         total_price += mealArr[i]->getPrice();
     }
 }
 
-double InRestaurant::getPrice()
-{
+double InRestaurant::getPrice() {
     return total_price;
 }
 
-void InRestaurant::printReciept()
-{
+void InRestaurant::printReciept() {
     cout << "--------------------------------------" << endl;
     for (int i = 0; i < mealCount; ++i)
     {
@@ -35,7 +31,5 @@ void InRestaurant::printReciept()
     cout << "--------------------------------------" << endl;
 }
 
-InRestaurant::~InRestaurant()
-{
-    //dtor
+InRestaurant::~InRestaurant() {
 }
