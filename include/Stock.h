@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 #include <unistd.h>
 
 #include "Ingredient.h"
@@ -20,8 +21,8 @@ class stock {
         virtual ~stock();
 
     private:
-        int m_ingCount, m_ingSize;
-        Ingredient *ingtList;
+        int m_ingCount;
+        vector<Ingredient*> ingList;
 };
 
 #endif 

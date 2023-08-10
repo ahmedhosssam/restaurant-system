@@ -162,7 +162,6 @@ void Restaurant::getIngredientsReports() {
 
 void Restaurant::addMeal(stock* a) {
     m1.add_meal(a);
-
 }
 
 void Restaurant::updateMealPrice() {

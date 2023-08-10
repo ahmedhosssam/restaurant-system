@@ -15,7 +15,7 @@ class Restaurant {
     vector<Table> tableArray;
     vector<Ingredient> ingArray;
     double total_revenue;
-    menu m1;
+    Menu m1;
     int tableArrSize;
 
   public:

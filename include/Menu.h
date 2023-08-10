@@ -4,14 +4,13 @@
 #include <unistd.h>
 
 #include "Meal.h"
-#include "Meal.h"
 #include "Stock.h"
 
 using namespace std;
 
-class menu {
+class Menu {
     public:
-        menu();
+        Menu();
         void add_meal(stock*);
         void add_meal(Meal m);
         void updateMealPrice();
@@ -19,7 +18,7 @@ class menu {
         void display_all();
         int getMealsNumber();
         Meal* getMeal(int n);
-        virtual ~menu();
+        virtual ~Menu();
 
     private:
         int m_mealCount , m_MealSize;

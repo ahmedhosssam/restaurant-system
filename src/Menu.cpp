@@ -5,24 +5,24 @@
 
 using namespace std;
 
-menu::menu() {
+Menu::Menu() {
     m_MealSize = 50;
     mealList = new Meal[m_MealSize];
     m_mealCount = 0;
 
 }
 
-void menu::add_meal(stock* a) {
+void Menu::add_meal(stock* a) {
     Meal* b = new Meal(a);
     cin>>b;
     mealList[m_mealCount++] = *b;
 }
 
-void menu::add_meal(Meal m) {
+void Menu::add_meal(Meal m) {
     mealList[m_mealCount++] = m;
 }
 
-void menu::updateMealPrice() {
+void Menu::updateMealPrice() {
     int id;
     bool found = true;
     cout<<"Enter meal id: ";
@@ -40,7 +40,7 @@ void menu::updateMealPrice() {
     }
 }
 
-void menu::deleteMeal() {
+void Menu::deleteMeal() {
     int id;
     bool found = true;
 
@@ -63,7 +63,7 @@ void menu::deleteMeal() {
     }
 }
 
-void menu::display_all() {
+void Menu::display_all() {
     if(m_mealCount != 0) {
         cout << "Menu :" << endl;
 
@@ -76,14 +76,14 @@ void menu::display_all() {
     }
 }
 
-Meal* menu::getMeal(int n) {
+Meal* Menu::getMeal(int n) {
     Meal* ptr = &mealList[n];
     return ptr;
 }
 
-int menu::getMealsNumber() {
+int Menu::getMealsNumber() {
     return m_mealCount;
 }
 
-menu::~menu() {
+Menu::~Menu() {
 }

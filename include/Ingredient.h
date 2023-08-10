@@ -8,22 +8,22 @@ using namespace std;
 class Ingredient {
     public:
         Ingredient();
-        Ingredient(string m_name, int m_id, double m_price, int quantity);
+        Ingredient(string name, int id, double price, int quantity);
         void setData();
         void update_quantity();
         void update_price();
+        void reduceQuantity();
         double getPrice();
         int getID();
         string getData();
-        void reduceQuantity();
         friend istream& operator >>(istream&,Ingredient*);
         friend ostream& operator <<(ostream&,Ingredient&);
         virtual ~Ingredient();
 
     private:
-        string m_name;
-        int m_quantity, m_id;
-        double m_price;
+        string name;
+        int quantity, id;
+        double price;
 };
 
 #endif // INGREDIANT_H
