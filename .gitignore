@@ -1,0 +1,5 @@
+# Ignore compiled object files
+*.o
+
+# Ignore swap files created by text editors
+*.swp
