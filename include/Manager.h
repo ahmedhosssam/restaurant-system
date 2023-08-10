@@ -8,8 +8,7 @@ using namespace std;
 #define MANAGER_H
 
 
-class Manager
-{
+class Manager {
     public:
         Manager();
         void kitchen();

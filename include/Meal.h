@@ -7,8 +7,7 @@
 #include "Stock.h"
 using namespace std;
 
-class Meal
-{
+class Meal {
     public:
         Meal();
         Meal(stock*);

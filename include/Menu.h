@@ -9,8 +9,7 @@
 
 using namespace std;
 
-class menu
-{
+class menu {
     public:
         menu();
         void add_meal(stock*);

@@ -8,8 +8,7 @@ using namespace std;
 #define STOCK_H
 
 
-class stock
-{
+class stock {
     public:
         stock();
         void add_ingrediant();

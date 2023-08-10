@@ -7,11 +7,11 @@
 #include "Meal.h"
 
 class TakeAway : public Order {
-public:
-    TakeAway(Meal** mealArr, int mealCount);
-    void calcPrice();
-    double getPrice();
-    void printReciept();
+    public:
+        TakeAway(Meal** mealArr, int mealCount);
+        void calcPrice();
+        double getPrice();
+        void printReciept();
 };
 
 #endif // TAKEAWAY_H

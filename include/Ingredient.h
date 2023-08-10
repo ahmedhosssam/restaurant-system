@@ -5,8 +5,7 @@ using namespace std;
 #define INGREDIANT_H
 
 
-class Ingredient
-{
+class Ingredient {
     public:
         Ingredient();
         Ingredient(string m_name, int m_id, double m_price, int quantity);
@@ -20,8 +19,6 @@ class Ingredient
         friend istream& operator >>(istream&,Ingredient*);
         friend ostream& operator <<(ostream&,Ingredient&);
         virtual ~Ingredient();
-
-    protected:
 
     private:
         string m_name;

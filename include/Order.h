@@ -6,8 +6,7 @@
 
 using namespace std;
 
-class Order
-{
+class Order {
 public:
     Order();
     virtual ~Order();

@@ -4,8 +4,7 @@
 #include <string>
 #include "Order.h"
 
-class Delivery : public Order
-{
+class Delivery : public Order {
     public:
         Delivery(Meal** mealArr, int mealCount);
         void calcPrice();
