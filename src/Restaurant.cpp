@@ -16,7 +16,6 @@ using namespace std;
 
 Restaurant::Restaurant() {
     total_revenue = 0;
-    ingCount = 7;
     
     // Tables :
     for (int i = 0; i < 15; i++)
@@ -159,7 +158,7 @@ void Restaurant::getMealsReports() {
 }
 
 void Restaurant::getIngredientsReports() {
-    for(int i = 0; i < ingCount; i++)
+    for(int i = 0; i < static_cast<int>(ingArray.size()); i++)
         cout << ingArray[i].getData() << endl;
 }
 
