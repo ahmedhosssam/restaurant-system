@@ -98,10 +98,8 @@ void Restaurant::makeOrder() {
         {
             case 0:
             {
-                for (int i = 0; i < tableArrSize; ++i)
-                {
-                    if (!tableArray[i].getStatus())
-                    {
+                for (int i = 0; i < tableArrSize; ++i) {
+                    if (!tableArray[i].getStatus()) {
                         Order* r1 = new InRestaurant(mealList, tableArray[i].getId());
                         orderArray.push_back(r1);
                         addToTotalRevenue(r1->getPrice());

@@ -6,8 +6,7 @@ Delivery::Delivery(vector<Meal*> mealArr) : Order(mealArr) {
     calcPrice();
 }
 
-void Delivery::calcPrice()
-{
+void Delivery::calcPrice() {
     total_price = 0;
     for (int i = 0; i < int(mealArr.size()); ++i) {
         total_price += mealArr[i]->getPrice();
@@ -16,13 +15,11 @@ void Delivery::calcPrice()
     total_price += 5; // delivery cost
 }
 
-double Delivery::getPrice()
-{
+double Delivery::getPrice() {
     return total_price;
 }
 
-void Delivery::printReciept()
-{
+void Delivery::printReciept() {
     cout << "--------------------------------------" << endl;
     for (int i = 0; i < int(mealArr.size()); ++i) {
         total_price += mealArr[i]->getPrice();
@@ -35,7 +32,6 @@ void Delivery::printReciept()
     cout << "--------------------------------------" << endl;
 }
 
-Delivery::~Delivery()
-{
+Delivery::~Delivery() {
     //dtor
 }

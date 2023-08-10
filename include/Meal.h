@@ -35,8 +35,6 @@ class Meal {
         friend ostream& operator <<(ostream&,Meal&);
         virtual ~Meal();
 
-    protected:
-
     private:
         string m_name;
         int m_id;
@@ -52,4 +50,4 @@ class Meal {
 
 };
 
-#endif // MEAL_H
+#endif 

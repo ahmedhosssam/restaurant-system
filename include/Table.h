@@ -15,4 +15,4 @@ class Table {
         int id;
 };
 
-#endif // TABLE_H
+#endif 

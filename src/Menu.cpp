@@ -5,27 +5,24 @@
 
 using namespace std;
 
-menu::menu()
-{
+menu::menu() {
     m_MealSize = 50;
     mealList = new Meal[m_MealSize];
     m_mealCount = 0;
 
 }
-void menu::add_meal(stock* a)
-{
+
+void menu::add_meal(stock* a) {
     Meal* b = new Meal(a);
     cin>>b;
     mealList[m_mealCount++] = *b;
-
 }
 
-void menu::add_meal(Meal m)
-{
+void menu::add_meal(Meal m) {
     mealList[m_mealCount++] = m;
 }
 
-void menu::updateMealPrice(){
+void menu::updateMealPrice() {
     int id;
     bool found = true;
     cout<<"Enter meal id: ";
@@ -36,24 +33,25 @@ void menu::updateMealPrice(){
             found = false;
         }
     }
+
     if(found){
         cout<<"\nNo matching meal found!...\n";
         cout<<"\nEnter any key to continue...";
     }
-
 }
 
-void menu::deleteMeal(){
+void menu::deleteMeal() {
     int id;
     bool found = true;
-    cout<<"Enter meal id: ";
+
+    cout << "Enter meal id: ";
     cin >> id;
-    for(int i=0;i<m_mealCount;++i){
+
+    for(int i = 0; i < m_mealCount; ++i) {
         if(mealList[i].getID()==id){
-            if(i==m_mealCount-1){
+            if(i==m_mealCount-1) {
                 m_mealCount--;
-            }
-            else{
+            } else {
                 mealList[i]= mealList[m_mealCount-1];
                 m_mealCount--;
             }
@@ -65,8 +63,8 @@ void menu::deleteMeal(){
     }
 }
 
-void menu::display_all(){
-    if(m_mealCount!=0){
+void menu::display_all() {
+    if(m_mealCount != 0) {
         cout << "Menu :" << endl;
 
         for(int i = 0; i < m_mealCount; ++i)
@@ -78,23 +76,14 @@ void menu::display_all(){
     }
 }
 
-Meal* menu::getMeal(int n)
-{
+Meal* menu::getMeal(int n) {
     Meal* ptr = &mealList[n];
     return ptr;
 }
 
-/*int* getAddress(int value) {
-    int* ptr = &value; // Store the address of the variable
-    return ptr; // Return the address
-}*/
-
-int menu::getMealsNumber()
-{
+int menu::getMealsNumber() {
     return m_mealCount;
 }
 
-menu::~menu()
-{
-    //dtor
+menu::~menu() {
 }

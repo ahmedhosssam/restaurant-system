@@ -2,27 +2,21 @@
 
 Table::Table() {}
 
-Table::Table(int id) : id(id)
-{
+Table::Table(int id) : id(id) {
     status = false;
 }
 
-bool Table::getStatus()
-{
+bool Table::getStatus() {
     return status;
 }
 
-void Table::updateStatus()
-{
+void Table::updateStatus() {
     status = !status;
 }
 
-int Table::getId()
-{
+int Table::getId() {
     return id;
 }
 
-Table::~Table()
-{
-    //dtor
+Table::~Table() {
 }

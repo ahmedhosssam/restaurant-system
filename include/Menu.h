@@ -21,8 +21,6 @@ class menu {
         Meal* getMeal(int n);
         virtual ~menu();
 
-    protected:
-
     private:
         int m_mealCount , m_MealSize;
         Meal *mealList;

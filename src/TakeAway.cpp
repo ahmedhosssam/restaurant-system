@@ -7,8 +7,7 @@
 
 using namespace std;
 
-TakeAway::TakeAway(vector<Meal*> mealArr) : Order(mealArr)
-{
+TakeAway::TakeAway(vector<Meal*> mealArr) : Order(mealArr) {
     calcPrice();
 }
 
@@ -21,8 +20,7 @@ void TakeAway::calcPrice() {
     }
 }
 
-double TakeAway::getPrice()
-{
+double TakeAway::getPrice() {
     return total_price;
 }
 

@@ -19,11 +19,9 @@ class stock {
         Ingredient* search_ing(int);
         virtual ~stock();
 
-    protected:
-
     private:
         int m_ingCount, m_ingSize;
         Ingredient *ingtList;
 };
 
-#endif // STOCK_H
+#endif 
