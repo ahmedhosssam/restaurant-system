@@ -3,76 +3,77 @@
 
 Manager::Manager() {}
 
-void Manager::ingredients(){
+void Manager::ingredients() {
     int c = -1;
-    while(c != 0){
+    while (c != 0) {
         system("clear");
-        cout<<"Ingredients: \n\n"
-            <<"  1.Add ingredient to stock\n"
-            <<"  2.Update ingredient quantity\n"
-            <<"  3.Update ingredient price\n"
-            <<"  4.Delete ingredient from stock\n"
-            <<"  0.Return\n"
-            <<"\nEnter your choice: ";
+
+        cout << "Ingredients: \n\n"
+             << "  1. Add ingredient to stock\n"
+             << "  2. Update ingredient quantity\n"
+             << "  3. Update ingredient price\n"
+             << "  4. Delete ingredient from stock\n"
+             << "  0. Return\n"
+             << "\nEnter your choice: ";
 
         cin >> c;
 
-        switch(c){
-        case 1:
-            system("clear");
-            a.add_ingrediant();
-            cout<<"\nEnter any key to continue...";
-            break;
-        case 2:
-            system("clear");
-            a.update_ingrediant_quantity();
-            break;
-        case 3:
-            system("clear");
-            a.update_ingrediant_price();
-            break;
-        case 4:
-            system("clear");
-            a.delete_ingrediant();
-            break;
-        case 0:
-            return;
-        default:
-            cout<<"\nInvalid input! please try again...";
+        switch (c) {
+            case 1:
+                system("clear");
+                a.add_ingrediant();
+                cout << "\nEnter any key to continue...";
+                break;
+            case 2:
+                system("clear");
+                a.update_ingrediant_quantity();
+                break;
+            case 3:
+                system("clear");
+                a.update_ingrediant_price();
+                break;
+            case 4:
+                system("clear");
+                a.delete_ingrediant();
+                break;
+            case 0:
+                return;
+            default:
+                cout << "\nInvalid input! Please try again...";
         }
     }
 }
 
-void Manager::meal(){
+void Manager::meal() {
     int c = -1;
-    while(c != 0){
-        cout<<"Meal: \n\n"
-            <<"  1.Add meal to the menu\n"
-            <<"  2.Update meal price\n"
-            <<"  3.Delete meal from menu\n"
-            <<"  0.Return \n"
-            <<"\nEnter your choice: ";
+    while (c != 0) {
+        cout << "Meal: \n\n"
+             << "  1. Add meal to the menu\n"
+             << "  2. Update meal price\n"
+             << "  3. Delete meal from menu\n"
+             << "  0. Return \n"
+             << "\nEnter your choice: ";
 
         cin >> c;
 
-        switch(c){
-        case 1:
-            system("clear");
-            r.addMeal(&a);
-            break;
-        case 2:
-            system("clear");
-            r.updateMealPrice();
-            break;
-        case 3:
-            system("clear");
-            r.deleteMeal();
-            break;
-        case 0:
-            return;
-        default:
-            cout<<"\nInvalid input! please try again...";
-            sleep(3);
+        switch (c) {
+            case 1:
+                system("clear");
+                r.addMeal(&a);
+                break;
+            case 2:
+                system("clear");
+                r.updateMealPrice();
+                break;
+            case 3:
+                system("clear");
+                r.deleteMeal();
+                break;
+            case 0:
+                return;
+            default:
+                cout << "\nInvalid input! Please try again...";
+                sleep(3);
         }
     }
 }
