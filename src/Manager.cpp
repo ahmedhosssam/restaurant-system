@@ -5,7 +5,7 @@ Manager::Manager() {}
 
 void Manager::ingredients(){
     int c = -1;
-    while(c!=0){
+    while(c != 0){
         system("clear");
         cout<<"Ingredients: \n\n"
             <<"  1.Add ingredient to stock\n"
@@ -109,6 +109,7 @@ void Manager::display(){
 
 void Manager::kitchen(){
     int c = -1;
+
     while(c != 0){
         cout<<"Kitchen: \n\n"
             << "  1.Ingredients\n"
@@ -116,6 +117,7 @@ void Manager::kitchen(){
             << "  3.Display\n"
             << "  0.Return\n"
             << "\nEnter your choice: ";
+
         cin >> c;
 
         switch(c){
