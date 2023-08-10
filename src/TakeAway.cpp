@@ -1,8 +1,10 @@
 #include <iostream>
 #include <vector>
-#include "TakeAway.h"
-#include "Order.h"
-#include "Meal.h"
+
+#include "../include/TakeAway.h"
+#include "../include/Order.h"
+#include "../include/Meal.h"
+
 using namespace std;
 
 TakeAway::TakeAway(Meal** mealArr, int mealCount) : Order(mealArr, mealCount)

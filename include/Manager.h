@@ -20,8 +20,6 @@ class Manager
         void reports();
         virtual ~Manager();
 
-    protected:
-
     private:
         stock a;
         Restaurant r;

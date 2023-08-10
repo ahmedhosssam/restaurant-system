@@ -1,12 +1,13 @@
-#include <Meal.h>
-#include <unistd.h>
-#include "conio.h"
-using namespace std;
 #ifndef MENU_H
 #define MENU_H
+
+#include <unistd.h>
+
+#include "Meal.h"
 #include "Meal.h"
 #include "Stock.h"
 
+using namespace std;
 
 class menu
 {

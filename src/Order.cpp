@@ -1,7 +1,8 @@
 #include <iostream>
 #include <string>
-#include "Order.h"
-#include "Meal.h"
+
+#include "../include/Order.h"
+#include "../include/Meal.h"
 
 using namespace std;
 

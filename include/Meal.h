@@ -1,5 +1,6 @@
 #ifndef MEAL_H
 #define MEAL_H
+
 #include <iostream>
 #include <string>
 #include "Ingredient.h"

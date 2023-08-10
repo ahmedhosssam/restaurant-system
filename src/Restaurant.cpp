@@ -1,15 +1,17 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "Restaurant.h"
-#include "Order.h"
-#include "TakeAway.h"
-#include "InRestaurant.h"
-#include "Delivery.h"
-#include "Meal.h"
-#include "menu.h"
-#include "Ingredient.h"
-#include "Table.h"
+
+#include "../include/Restaurant.h"
+#include "../include/Order.h"
+#include "../include/TakeAway.h"
+#include "../include/InRestaurant.h"
+#include "../include/Delivery.h"
+#include "../include/Meal.h"
+#include "../include/Menu.h"
+#include "../include/Ingredient.h"
+#include "../include/Table.h"
+
 using namespace std;
 
 Restaurant::Restaurant()

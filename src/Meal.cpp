@@ -1,6 +1,7 @@
-#include "Meal.h"
-#include "Ingredient.h"
 #include <iostream>
+
+#include "../include/Meal.h"
+
 using namespace std;
 
 

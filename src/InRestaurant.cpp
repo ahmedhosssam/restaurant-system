@@ -1,4 +1,4 @@
-#include "InRestaurant.h"
+#include "../include/InRestaurant.h"
 
 InRestaurant::InRestaurant(Meal** mealArr, int mealCount, int tableId) : Order(mealArr, mealCount), tableId(tableId)
 {

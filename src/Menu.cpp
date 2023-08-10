@@ -1,7 +1,10 @@
-#include "Menu.h"
-#include "Meal.h"
 #include <iostream>
+
+#include "../include/Menu.h"
+#include "../include/Meal.h"
+
 using namespace std;
+
 menu::menu()
 {
     m_MealSize = 50;
@@ -36,7 +39,6 @@ void menu::updateMealPrice(){
     if(found){
         cout<<"\nNo matching meal found!...\n";
         cout<<"\nEnter any key to continue...";
-        _getch();
     }
 
 }
@@ -61,7 +63,6 @@ void menu::deleteMeal(){
     if(found){
         cout<<"\nNo matching meal found!...\n";
         cout<<"\nEnter any key to continue...";
-        _getch();
     }
 }
 

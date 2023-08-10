@@ -1,4 +1,4 @@
-#include "Manager.h"
+#include "../include/Manager.h"
 #include <unistd.h>
 
 Manager::Manager() {}
@@ -20,7 +20,6 @@ void Manager::ingredients(){
             system("cls");
             a.add_ingrediant();
             cout<<"\nEnter any key to continue...";
-            _getch();
             break;
         case 2:
             system("cls");
@@ -39,7 +38,6 @@ void Manager::ingredients(){
         default:
             cout<<"\nInvalid input! please try again...";
             cout<<"\nEnter any key to continue...";
-            _getch();
         }
     }
 }
@@ -59,7 +57,6 @@ void Manager::meal(){
             system("cls");
             r.addMeal(&a);
             cout<<"\nEnter any key to continue...";
-            _getch();
             break;
         case 2:
             system("cls");
@@ -94,13 +91,11 @@ void Manager::display(){
             system("cls");
             r.getIngredientsReports();
             cout<<"\nEnter any key to continue...";
-            _getch();
             break;
         case 2:
             system("cls");
             r.showMenu();
             cout<<"\nEnter any key to continue...";
-            _getch();
             break;
         case 0:
             return;

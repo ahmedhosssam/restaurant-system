@@ -1,7 +1,8 @@
 #include <iostream>
 #include <unistd.h>
-#include "conio.h"
+
 #include "Ingredient.h"
+
 using namespace std;
 #ifndef STOCK_H
 #define STOCK_H

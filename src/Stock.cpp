@@ -1,4 +1,4 @@
-#include "Stock.h"
+#include "../include/Stock.h"
 
 stock::stock()
 {
@@ -27,7 +27,6 @@ void stock::update_ingrediant_quantity(){
     if(found){
         cout<<"\nNo matching ingredient found!...\n";
         cout<<"\nEnter any key to continue...";
-        _getch();
     }
 
 }
@@ -46,7 +45,6 @@ void stock::update_ingrediant_price(){
     if(found){
         cout<<"\nNo matching ingredient found!...\n";
         cout<<"\nEnter any key to continue...";
-        _getch();
     }
 }
 
@@ -70,7 +68,6 @@ void stock::delete_ingrediant(){
     if(found){
         cout<<"\nNo matching ingredient found!...\n";
         cout<<"\nEnter any key to continue...";
-        _getch();
     }
 }
 

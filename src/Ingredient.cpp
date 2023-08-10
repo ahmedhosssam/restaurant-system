@@ -1,4 +1,4 @@
-#include "Ingredient.h"
+#include "../include/Ingredient.h"
 
 Ingredient::Ingredient()
 {
