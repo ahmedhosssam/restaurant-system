@@ -1,9 +1,8 @@
 #include <iostream>
-#include "stock.h"
-#include "menu.h"
+#include "Stock.h"
+#include "Menu.h"
 #include "Restaurant.h"
 #include <unistd.h>
-#include "conio.h"
 using namespace std;
 #ifndef MANAGER_H
 #define MANAGER_H
