@@ -1,19 +1,20 @@
 #ifndef INRESTAURANT_H
 #define INRESTAURANT_H
 
+#include <vector>
+
 #include "Order.h"
 
-class InRestaurant : public Order
-{
-public:
-    InRestaurant(Meal** mealArr, int mealCount, int tableId);
-    void calcPrice();
-    double getPrice();
-    void printReciept();
-    virtual ~InRestaurant();
+class InRestaurant : public Order {
+    public:
+        InRestaurant(vector<Meal*> mealArr, int tableId);
+        void calcPrice();
+        double getPrice();
+        void printReciept();
+        virtual ~InRestaurant();
 
-protected:
-    int tableId;
+    protected:
+        int tableId;
 
 };
 

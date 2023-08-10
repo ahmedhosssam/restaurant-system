@@ -1,27 +1,26 @@
 #ifndef ORDER_H
 #define ORDER_H
+
 #include <iostream>
 #include <string>
+#include <vector>
+
 #include "Meal.h"
 
 using namespace std;
 
 class Order {
-public:
-    Order();
-    virtual ~Order();
-    Order(Meal** mealArr, int mealCount);
-    virtual void calcPrice();
-    virtual double getPrice();
-    virtual void printReciept();
+    public:
+        virtual ~Order();
+        Order(vector<Meal*> mealArr);
+        virtual void printReciept();
+        virtual void calcPrice();
+        virtual double getPrice();
 
-protected:
-    int id;
-    double total_price;
-    Meal** mealArr;
-    int mealCount;
-
-private:
+    protected:
+        int id;
+        double total_price;
+        vector<Meal*> mealArr;
 };
 
 #endif // ORDER_H

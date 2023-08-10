@@ -2,11 +2,12 @@
 #define DELIVERY_H
 
 #include <string>
+#include <vector>
 #include "Order.h"
 
 class Delivery : public Order {
     public:
-        Delivery(Meal** mealArr, int mealCount);
+        Delivery(vector<Meal*> mealArr);
         void calcPrice();
         double getPrice();
         void printReciept();

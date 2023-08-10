@@ -164,6 +164,7 @@ void Manager::reports() {
             <<"  0.return\n"
             <<"\nEnter your choice: ";
         cin >> c;
+
         switch(c){
         case 1:
             r.getIngredientsReports();
@@ -180,7 +181,7 @@ void Manager::reports() {
         case 0:
             return;
         default:
-            cout<<"\nInvalid input! please try again...";
+            cout << "\nInvalid input! please try again...";
             sleep(3);
 
         }

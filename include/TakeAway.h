@@ -8,7 +8,7 @@
 
 class TakeAway : public Order {
     public:
-        TakeAway(Meal** mealArr, int mealCount);
+        TakeAway(vector<Meal*> mealArr);
         void calcPrice();
         double getPrice();
         void printReciept();

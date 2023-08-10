@@ -16,7 +16,6 @@ using namespace std;
 
 Restaurant::Restaurant() {
     total_revenue = 0;
-    orderCount = 0;
     tableCount = 10;
     ingCount = 7;
 
@@ -49,11 +48,10 @@ Restaurant::Restaurant() {
     m1.add_meal(burger);
     m1.add_meal(spaghettiBolognese);
     m1.add_meal(chickenBreast);
-    orderArray = new Order*[orderCount];
 }
 
 void Restaurant::makeOrder() {
-    Meal** mealList = nullptr;  // Dynamic array of Meal pointers
+    vector<Meal*> mealList;
     m1.display_all();
     int quantity;
     int option;
@@ -65,8 +63,7 @@ void Restaurant::makeOrder() {
     {
         cout << "Select a meal by its number: ";
         cin >> option;
-        if (option > m1.getMealsNumber())
-        {
+        if (option > m1.getMealsNumber()) {
             cout << "Please enter a valid number.\n";
             continue;
         }
@@ -84,16 +81,7 @@ void Restaurant::makeOrder() {
         currentMeal->reduceQuantity(quantity);
         currentMeal->setOrderQuantity(quantity);
 
-        // Resize the dynamic array
-        Meal** temp = new Meal*[mealCounter + 1];
-        for (int i = 0; i < mealCounter; i++)
-        {
-            temp[i] = mealList[i];
-        }
-        temp[mealCounter] = currentMeal;
-
-        delete[] mealList;
-        mealList = temp;
+        mealList.push_back(currentMeal);
 
         mealCounter++;
 
@@ -116,9 +104,8 @@ void Restaurant::makeOrder() {
                 {
                     if (!tableArray[i].getStatus())
                     {
-                        Order* r1 = new InRestaurant(mealList, mealCounter ,tableArray[i].getId());
-                        orderArray[orderCount] = r1;
-                        orderCount++;
+                        Order* r1 = new InRestaurant(mealList, tableArray[i].getId());
+                        orderArray.push_back(r1);
                         addToTotalRevenue(r1->getPrice());
                         r1->printReciept();
                         tableArray[i].updateStatus();
@@ -129,18 +116,17 @@ void Restaurant::makeOrder() {
             }
             case 1:
             {
-                Order* d1 = new Delivery(mealList, mealCounter);
-                orderArray[orderCount] = d1;
-                orderCount++;
+                Order* d1 = new Delivery(mealList);
+                orderArray.push_back(d1);
                 addToTotalRevenue(d1->getPrice());
                 d1->printReciept();
+                cout << "test\n";
                 break;
             }
             case 2:
             {
-                Order* t1 = new TakeAway(mealList, mealCounter);
-                orderArray[orderCount] = t1;
-                orderCount++;
+                Order* t1 = new TakeAway(mealList);
+                orderArray.push_back(t1);
                 addToTotalRevenue(t1->getPrice());
                 t1->printReciept();
                 break;
@@ -164,8 +150,7 @@ void Restaurant::showMenu() {
 }
 
 void Restaurant::getOrdersReports() {
-    for(int i = 0; i < orderCount; i++)
-    {
+    for(int i = 0; i < orderArray.size(); i++) {
         orderArray[i]->printReciept();
     }
 }
@@ -193,7 +178,6 @@ void Restaurant::deleteMeal() {
 }
 
 Restaurant::~Restaurant() {
-    delete[] orderArray;
     delete[] tableArray;
     delete[] ingArray;
 }

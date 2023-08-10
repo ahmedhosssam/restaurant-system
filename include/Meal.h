@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
+
 #include "Ingredient.h"
 #include "Stock.h"
 using namespace std;
@@ -21,12 +23,12 @@ class Meal {
         void calcPrice();
         void getData();
         void setOrderQuantity(int p);
-        int getOrderQuantity();
         void reduceQuantity(int n);
-        double getPrice();
+        int getOrderQuantity();
         int getID();
         int getMealIng();
         int getQuantity();
+        double getPrice();
         string getName();
 
         friend istream& operator >>(istream&,Meal*);
