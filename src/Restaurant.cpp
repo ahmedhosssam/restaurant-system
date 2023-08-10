@@ -14,8 +14,7 @@
 
 using namespace std;
 
-Restaurant::Restaurant()
-{
+Restaurant::Restaurant() {
     total_revenue = 0;
     orderCount = 0;
     tableCount = 10;
@@ -53,8 +52,7 @@ Restaurant::Restaurant()
     orderArray = new Order*[orderCount];
 }
 
-void Restaurant::makeOrder()
-{
+void Restaurant::makeOrder() {
     Meal** mealList = nullptr;  // Dynamic array of Meal pointers
     m1.display_all();
     int quantity;
@@ -153,58 +151,48 @@ void Restaurant::makeOrder()
         }
 }
 
-void Restaurant::addToTotalRevenue(double orderPrice)
-{
+void Restaurant::addToTotalRevenue(double orderPrice) {
     total_revenue += orderPrice;
 }
 
-double Restaurant::getTotalRevenue()
-{
+double Restaurant::getTotalRevenue() {
     return Restaurant::total_revenue;
 }
 
-void Restaurant::showMenu()
-{
+void Restaurant::showMenu() {
     m1.display_all();
 }
 
-void Restaurant::getOrdersReports()
-{
+void Restaurant::getOrdersReports() {
     for(int i = 0; i < orderCount; i++)
     {
         orderArray[i]->printReciept();
     }
 }
 
-void Restaurant::getMealsReports()
-{
+void Restaurant::getMealsReports() {
     m1.display_all();
 }
 
-void Restaurant::getIngredientsReports()
-{
+void Restaurant::getIngredientsReports() {
     for(int i = 0; i < ingCount; i++)
         cout << ingArray[i].getData() << endl;
 }
 
-void Restaurant::addMeal(stock* a)
-{
+void Restaurant::addMeal(stock* a) {
     m1.add_meal(a);
 
 }
 
-void Restaurant::updateMealPrice()
-{
+void Restaurant::updateMealPrice() {
     m1.updateMealPrice();
 }
 
-void Restaurant::deleteMeal()
-{
+void Restaurant::deleteMeal() {
     m1.deleteMeal();
 }
 
-Restaurant::~Restaurant()
-{
+Restaurant::~Restaurant() {
     delete[] orderArray;
     delete[] tableArray;
     delete[] ingArray;
