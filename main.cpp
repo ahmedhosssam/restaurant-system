@@ -12,13 +12,12 @@ int main()
     Manager a;
     while(c != 0)
     {
-        cout<<"\tRestaurants Application\n\n"
-            <<"Main menu: \n\n"
-            <<"  1. Kitchen\n"
-            <<"  2. Make Order\n"
-            <<"  3. Report\n"
-            <<"  0. Exit\n"
-            <<"\nEnter your choice: ";
+            cout << "Main menu: \n\n"
+            << "  1. Kitchen\n"
+            << "  2. Make Order\n"
+            << "  3. Report\n"
+            << "  0. Exit\n"
+            << "\nEnter your choice: ";
 
         cin >> c;
 
@@ -38,10 +37,9 @@ int main()
             break;
         case 0:
             system("clear");
-            cout<<"Thanks!";
             return 0;
         default:
-            cout<<"\nInvalid input! please try again...";
+            cout << "\nInvalid input! please try again...";
             sleep(3);
 
         }

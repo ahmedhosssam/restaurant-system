@@ -102,6 +102,7 @@ void Manager::display(){
         default:
             cout << "\nInvalid input! please try again...\n";
             sleep(3);
+            system("clear");
         }
     }
 }
@@ -133,6 +134,7 @@ void Manager::kitchen(){
             display();
             break;
         case 0:
+            system("clear");
             return;
         default:
             cout<<"\nInvalid input! please try again...";
