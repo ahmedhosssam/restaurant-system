@@ -2,7 +2,7 @@
 
 Ingredient::Ingredient() { }
 
-Ingredient::Ingredient(string name, int id, double price, int quantity) : name(name), id(id), price(price), quantity(quantity)
+Ingredient::Ingredient(string name, double price, int quantity) : name(name), id(id), price(price), quantity(quantity)
 { }
 
 double Ingredient::getPrice() {

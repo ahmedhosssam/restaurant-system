@@ -12,10 +12,11 @@ using namespace std;
 class Stock {
     public:
         Stock();
-        void add_ingrediant();
-        void update_ingrediant_quantity();
-        void update_ingrediant_price();
-        void delete_ingrediant();
+        void add_ingredient();
+        void add_ingredient(Ingredient* ing);
+        void update_ingredient_quantity();
+        void update_ingredient_price();
+        void delete_ingredient();
         void display_all();
         Ingredient* search_ing(int id);
         virtual ~Stock();

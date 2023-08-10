@@ -1,0 +1,7 @@
+Tomato 0 3 15
+Bread 1 4 10
+Beef 2 5 12
+Potato 3 3 45
+Spaghetti 4 6 36
+Chicken 5 6, 24
+Cheese 6 6 17

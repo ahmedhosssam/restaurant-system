@@ -1,15 +1,34 @@
+#include <fstream>
+
 #include "../include/Stock.h"
 
 Stock::Stock() {
+    ifstream ingredients("../data/ingredients.txt");
+
+    string line;
+    while(getline(ingredients, line)) {
+        string i_name;
+        double i_price;
+        int i_quantity;
+
+        if(ingredients >> i_name >> i_price >> i_quantity) {
+            Ingredient* i = new Ingredient(i_name, i_price, i_quantity);
+            ingList.push_back(i);
+        }
+    }
 }
 
-void Stock::add_ingrediant() {
+void Stock::add_ingredient() {
     Ingredient* a = new Ingredient();
     cin >> a;
     ingList.push_back(a);
 }
 
-void Stock::update_ingrediant_quantity() {
+void Stock::add_ingredient(Ingredient* ing) {
+    ingList.push_back(ing);
+}
+
+void Stock::update_ingredient_quantity() {
     int id;
     bool found = false;
 
@@ -28,7 +47,7 @@ void Stock::update_ingrediant_quantity() {
     }
 }
 
-void Stock::update_ingrediant_price() {
+void Stock::update_ingredient_price() {
     int id;
     bool found = false;
 
@@ -47,7 +66,7 @@ void Stock::update_ingrediant_price() {
     }
 }
 
-void Stock::delete_ingrediant() {
+void Stock::delete_ingredient() {
     int id;
     bool found = false;
 

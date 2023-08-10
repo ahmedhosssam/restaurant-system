@@ -21,15 +21,6 @@ Restaurant::Restaurant() {
     for (int i = 0; i < 15; i++)
         tableArray.push_back(Table(i + 1)); // i + 1 to start from 1 not 0
 
-    // test ingredients
-    ingArray.push_back(Ingredient("Tomato", 0, 3, 15));
-    ingArray.push_back(Ingredient("Bread", 1, 4, 10));
-    ingArray.push_back(Ingredient("Beef", 2, 5, 12));
-    ingArray.push_back(Ingredient("Potato", 3, 3, 45));
-    ingArray.push_back(Ingredient("Spaghetti", 4, 6, 36));
-    ingArray.push_back(Ingredient("Chicken", 5, 6, 24));
-    ingArray.push_back(Ingredient("Cheese", 6, 6, 17));
-
     // test meals
     Ingredient burgerIngredients[] = {ingArray[0], ingArray[1], ingArray[2]};
     Meal burger("Burger", 0, 6, burgerIngredients, 3);

@@ -8,7 +8,7 @@ using namespace std;
 class Ingredient {
     public:
         Ingredient();
-        Ingredient(string name, int id, double price, int quantity);
+        Ingredient(string name, double price, int quantity);
         void setData();
         void update_quantity();
         void update_price();

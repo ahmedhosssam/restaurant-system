@@ -7,7 +7,7 @@ using namespace std;
 #ifndef MANAGER_H
 #define MANAGER_H
 
-
+// this class just for layout
 class Manager {
     public:
         Manager();
