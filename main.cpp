@@ -1,7 +1,9 @@
 #include <iostream>
 #include <unistd.h>
+
 #include "include/Manager.h"
 #include "include/Restaurant.h"
+
 using namespace std;
 
 int main()
@@ -10,7 +12,6 @@ int main()
     Manager a;
     while(c != 0)
     {
-        //system("cls");
         cout<<"\tRestaurants Application\n\n"
             <<"Main menu: \n\n"
             <<"  1. Kitchen\n"
@@ -18,23 +19,25 @@ int main()
             <<"  3. Report\n"
             <<"  0. Exit\n"
             <<"\nEnter your choice: ";
+
         cin >> c;
+
         switch(c)
         {
         case 1:
-            system("cls");
+            system("clear");
             a.kitchen();
             break;
         case 2:
-            system("cls");
-            a.MakeOrder();
+            system("clear");
+            a.makeOrder();
             break;
         case 3:
-            system("cls");
+            system("clear");
             a.reports();
             break;
         case 0:
-            system("cls");
+            system("clear");
             cout<<"Thanks!";
             return 0;
         default:

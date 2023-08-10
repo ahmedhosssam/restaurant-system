@@ -16,7 +16,7 @@ class Manager
         void ingredients();
         void meal();
         void display();
-        void MakeOrder();
+        void makeOrder();
         void reports();
         virtual ~Manager();
 
