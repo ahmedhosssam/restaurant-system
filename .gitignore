@@ -3,3 +3,5 @@
 
 # Ignore swap files created by text editors
 *.swp
+
+.vscode
