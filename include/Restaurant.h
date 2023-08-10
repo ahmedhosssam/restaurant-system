@@ -12,12 +12,12 @@ using namespace std;
 class Restaurant {
   private:
     vector<Order*> orderArray; // for all orders that had been made
-    Table* tableArray;// for all tables
-    Ingredient* ingArray;
+    vector<Table> tableArray;
+    vector<Ingredient> ingArray;
     double total_revenue;
     menu m1;
-    int tableCount;
     int ingCount;
+    int tableArrSize;
 
   public:
     Restaurant();

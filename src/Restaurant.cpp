@@ -16,23 +16,20 @@ using namespace std;
 
 Restaurant::Restaurant() {
     total_revenue = 0;
-    tableCount = 10;
     ingCount = 7;
-
+    
     // Tables :
-    tableArray = new Table[tableCount];
-    for (int i = 0; i < tableCount; i++)
-        tableArray[i] = Table(i + 1);
+    for (int i = 0; i < 15; i++)
+        tableArray.push_back(Table(i + 1)); // i + 1 to start from 1 not 0
 
     // test ingredients
-    ingArray = new Ingredient[ingCount];
-    ingArray[0] = Ingredient("Tomato", 0, 3, 15);
-    ingArray[1] = Ingredient("Bread", 1, 4, 10);
-    ingArray[2] = Ingredient("Beef", 2, 5, 12);
-    ingArray[3] = Ingredient("Potato", 3, 3, 45);
-    ingArray[4] = Ingredient("Spaghetti", 4, 6, 36);
-    ingArray[5] = Ingredient("Chicken ", 5, 6, 24);
-    ingArray[6] = Ingredient("Cheese", 6, 6, 17);
+    ingArray.push_back(Ingredient("Tomato", 0, 3, 15));
+    ingArray.push_back(Ingredient("Bread", 1, 4, 10));
+    ingArray.push_back(Ingredient("Beef", 2, 5, 12));
+    ingArray.push_back(Ingredient("Potato", 3, 3, 45));
+    ingArray.push_back(Ingredient("Spaghetti", 4, 6, 36));
+    ingArray.push_back(Ingredient("Chicken", 5, 6, 24));
+    ingArray.push_back(Ingredient("Cheese", 6, 6, 17));
 
     // test meals
     Ingredient burgerIngredients[] = {ingArray[0], ingArray[1], ingArray[2]};
@@ -48,6 +45,8 @@ Restaurant::Restaurant() {
     m1.add_meal(burger);
     m1.add_meal(spaghettiBolognese);
     m1.add_meal(chickenBreast);
+
+    tableArrSize = static_cast<int>(tableArray.size());
 }
 
 void Restaurant::makeOrder() {
@@ -100,7 +99,7 @@ void Restaurant::makeOrder() {
         {
             case 0:
             {
-                for (int i = 0; i < tableCount; ++i)
+                for (int i = 0; i < tableArrSize; ++i)
                 {
                     if (!tableArray[i].getStatus())
                     {
@@ -150,7 +149,7 @@ void Restaurant::showMenu() {
 }
 
 void Restaurant::getOrdersReports() {
-    for(int i = 0; i < orderArray.size(); i++) {
+    for(int i = 0; i < static_cast<int>(orderArray.size()); i++) {
         orderArray[i]->printReciept();
     }
 }
@@ -178,6 +177,4 @@ void Restaurant::deleteMeal() {
 }
 
 Restaurant::~Restaurant() {
-    delete[] tableArray;
-    delete[] ingArray;
 }
