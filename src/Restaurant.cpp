@@ -139,6 +139,14 @@ void Restaurant::add_ingredient() {
     s.add_ingredient();
 }
 
+void Restaurant::update_ingredient(int i) {
+    if (i == 1) {
+        s.update_ingredient_quantity();
+    } else if (i == 2) {
+        s.update_ingredient_price();
+    }
+}
+
 void Restaurant::addMeal(Stock* a) {
     m1.add_meal(a);
 }

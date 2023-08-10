@@ -24,9 +24,11 @@ void Manager::ingredients() {
                 break;
             case 2:
                 system("clear");
+                r.update_ingredient(1);
                 break;
             case 3:
                 system("clear");
+                r.update_ingredient(2);
                 break;
             case 4:
                 system("clear");

@@ -40,6 +40,7 @@ void Stock::update_ingredient_quantity() {
     int id;
     bool found = false;
 
+    display_all();
     cout<< "Enter ingredient id: ";
     cin >> id;
 
@@ -59,6 +60,7 @@ void Stock::update_ingredient_price() {
     int id;
     bool found = false;
 
+    display_all();
     cout<<"Enter ingredient id: ";
     cin >> id;
 
@@ -78,6 +80,7 @@ void Stock::delete_ingredient() {
     int id;
     bool found = false;
 
+    display_all();
     cout << "Enter ingredient id: ";
     cin >> id;
 
