@@ -6,7 +6,7 @@ Manager::Manager() {}
 void Manager::ingredients(){
     int c=-1;
     while(c!=0){
-        system("cls");
+        system("clear");
         cout<<"Ingredients: \n\n"
             <<"  1.Add ingredient to stock\n"
             <<"  2.Update ingredient quantity\n"
@@ -17,20 +17,20 @@ void Manager::ingredients(){
         cin >> c;
         switch(c){
         case 1:
-            system("cls");
+            system("clear");
             a.add_ingrediant();
             cout<<"\nEnter any key to continue...";
             break;
         case 2:
-            system("cls");
+            system("clear");
             a.update_ingrediant_quantity();
             break;
         case 3:
-            system("cls");
+            system("clear");
             a.update_ingrediant_price();
             break;
         case 4:
-            system("cls");
+            system("clear");
             a.delete_ingrediant();
             break;
         case 0:
@@ -54,16 +54,16 @@ void Manager::meal(){
         cin >> c;
         switch(c){
         case 1:
-            system("cls");
+            system("clear");
             r.addMeal(&a);
             cout<<"\nEnter any key to continue...";
             break;
         case 2:
-            system("cls");
+            system("clear");
             r.updateMealPrice();
             break;
         case 3:
-            system("cls");
+            system("clear");
             r.deleteMeal();
             break;
         case 0:
@@ -79,7 +79,7 @@ void Manager::meal(){
 void Manager::display(){
     int c=-1;
     while(c!=0){
-            system("cls");
+        system("clear");
         cout<<"Display: \n\n"
             <<"  1.Ingredients in stock\n"
             <<"  2.Menu\n"
@@ -88,12 +88,12 @@ void Manager::display(){
         cin >> c;
         switch(c){
         case 1:
-            system("cls");
+            system("clear");
             r.getIngredientsReports();
             cout<<"\nEnter any key to continue...";
             break;
         case 2:
-            system("cls");
+            system("clear");
             r.showMenu();
             cout<<"\nEnter any key to continue...";
             break;
@@ -110,23 +110,24 @@ void Manager::kitchen(){
     int c=-1;
     while(c!=0){
         cout<<"Kitchen: \n\n"
-            <<"  1.Ingredients\n"
-            <<"  2.Meal\n"
-            <<"  3.Display\n"
-            <<"  0.Return\n"
-            <<"\nEnter your choice: ";
+            << "  1.Ingredients\n"
+            << "  2.Meal\n"
+            << "  3.Display\n"
+            << "  0.Return\n"
+            << "\nEnter your choice: ";
         cin >> c;
+
         switch(c){
         case 1:
-            system("cls");
+            system("clear");
             ingredients();
             break;
         case 2:
-            system("cls");
+            system("clear");
             meal();
             break;
         case 3:
-            system("cls");
+            system("clear");
             display();
             break;
         case 0:

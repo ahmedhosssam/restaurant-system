@@ -6,17 +6,15 @@
 
 class Delivery : public Order
 {
-public:
-    Delivery(Meal** mealArr, int mealCount);
-    void calcPrice();
-    double getPrice();
-    void printReciept();
-    virtual ~Delivery();
+    public:
+        Delivery(Meal** mealArr, int mealCount);
+        void calcPrice();
+        double getPrice();
+        void printReciept();
+        virtual ~Delivery();
 
-protected:
-    string address;
-
-private:
+    protected:
+        string address;
 };
 
-#endif // DELIVERY_H
+#endif 
