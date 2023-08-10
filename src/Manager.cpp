@@ -80,7 +80,6 @@ void Manager::meal() {
 void Manager::display(){
     int c = -1;
     while(c != 0){
-        system("clear");
         cout<<"Display: \n\n"
             <<"  1.Ingredients in stock\n"
             <<"  2.Menu\n"
