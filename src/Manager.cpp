@@ -1,5 +1,4 @@
 #include "../include/Manager.h"
-#include <unistd.h>
 
 Manager::Manager() {}
 
