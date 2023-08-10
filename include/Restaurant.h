@@ -25,6 +25,7 @@ class Restaurant {
     void showMenu();
     void getIngredientsReports();
     void addMeal();
+    void add_ingredient();
     void addMeal(Stock*);
     void updateMealIng();
     void updateMealPrice();

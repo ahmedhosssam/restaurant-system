@@ -135,6 +135,10 @@ void Restaurant::getIngredientsReports() {
     s.display_all();
 }
 
+void Restaurant::add_ingredient() {
+    s.add_ingredient();
+}
+
 void Restaurant::addMeal(Stock* a) {
     m1.add_meal(a);
 }

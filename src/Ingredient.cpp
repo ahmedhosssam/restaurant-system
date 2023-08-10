@@ -12,9 +12,6 @@ double Ingredient::getPrice() {
 void Ingredient::setData() {
     cout << "Enter Ingredient data: \n\n";
 
-    cout << "  Enter ID: ";
-    cin >> id;
-
     cout << "  Enter name: ";
     cin.ignore();
     getline(cin, name);

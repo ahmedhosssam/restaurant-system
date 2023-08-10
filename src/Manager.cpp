@@ -20,7 +20,7 @@ void Manager::ingredients() {
         switch (c) {
             case 1:
                 system("clear");
-                cout << "\nEnter any key to continue...";
+                r.add_ingredient();
                 break;
             case 2:
                 system("clear");
