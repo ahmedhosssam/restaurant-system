@@ -99,5 +99,9 @@ Ingredient* Stock::search_ing(int id) {
     }
 }
 
+int Stock::returnIngNum() {
+    return static_cast<int>(ingList.size());
+}
+
 Stock::~Stock() {
 }

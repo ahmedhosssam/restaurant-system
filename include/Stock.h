@@ -18,6 +18,7 @@ class Stock {
         void update_ingredient_price();
         void delete_ingredient();
         void display_all();
+        int returnIngNum();
         Ingredient* search_ing(int id);
         virtual ~Stock();
 

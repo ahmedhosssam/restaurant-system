@@ -13,7 +13,6 @@ class Restaurant {
   private:
     vector<Order*> orderArray; // for all orders that had been made
     vector<Table> tableArray;
-    vector<Ingredient> ingArray;
     double total_revenue;
     Menu m1;
     Stock s;

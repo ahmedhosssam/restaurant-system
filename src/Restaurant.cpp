@@ -21,21 +21,6 @@ Restaurant::Restaurant() {
     for (int i = 0; i < 15; i++)
         tableArray.push_back(Table(i + 1)); // i + 1 to start from 1 not 0
 
-    // test meals
-    Ingredient burgerIngredients[] = {ingArray[0], ingArray[1], ingArray[2]};
-    Meal burger("Burger", 0, 6, burgerIngredients, 3);
-
-    Ingredient spaghettiIngredients[] = {ingArray[4], ingArray[0]};
-    Meal spaghettiBolognese("Spaghetti Bolognese", 1, 10, spaghettiIngredients, 2);
-
-    Ingredient chickenBreastIngredients[] = {ingArray[5], ingArray[1]};
-    Meal chickenBreast("Chicken Breast", 2, 15, chickenBreastIngredients, 2);
-
-    // test menu
-    m1.add_meal(burger);
-    m1.add_meal(spaghettiBolognese);
-    m1.add_meal(chickenBreast);
-
     tableArrSize = static_cast<int>(tableArray.size());
 }
 
@@ -147,8 +132,7 @@ void Restaurant::getMealsReports() {
 }
 
 void Restaurant::getIngredientsReports() {
-    for(int i = 0; i < static_cast<int>(ingArray.size()); i++)
-        cout << ingArray[i].getData() << endl;
+    s.display_all();
 }
 
 void Restaurant::addMeal(Stock* a) {
