@@ -18,6 +18,7 @@ class Manager
         void display();
         void makeOrder();
         void reports();
+        void showMenu();
         virtual ~Manager();
 
     private:

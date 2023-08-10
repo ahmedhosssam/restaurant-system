@@ -1,148 +1,134 @@
 #include <iostream>
-
 #include "../include/Meal.h"
 
 using namespace std;
 
-
-Meal::Meal(stock* a)
-{
-   z = a;
-   inglist = new Ingredient[25];
-   m_count = 0;
-   ingglist = new Ingredient*[25];
-   m_countt = 0;
-
+Meal::Meal(stock* a) {
+    z = a;
+    inglist = new Ingredient[25];
+    m_count = 0;
+    ingglist = new Ingredient*[25];
+    m_countt = 0;
 }
 
-Meal::Meal()
-{
-
-
+Meal::Meal() {
 }
 
+Meal::Meal(string m_name, int m_id, int quantity, Ingredient* inglist, int ingSize)
+    : m_name(m_name), m_id(m_id), quantity(quantity), inglist(inglist), ingSize(ingSize) {
 
-Meal::Meal(string m_name, int m_id, int quantity, Ingredient* inglist, int ingSize) : m_name(m_name), m_id(m_id), quantity(quantity), inglist(inglist), ingSize(ingSize)
-{
-    //inglist = new ingrediant[25];
     calcPrice();
-    m_count=0;
-
+    m_count = 0;
 }
 
-void Meal::setData(){
-    cout<<"Enter meal data: \n\n";
-    cout<<"  Enter ID: ";
+void Meal::setData() {
+    cout << "Enter the details of the meal:\n\n";
+    cout << "  Enter ID: ";
     cin >> m_id;
-    cout<<"  Enter name: ";
+
+    cout << "  Enter name: ";
     cin.ignore();
     getline(cin, m_name);
-    cout << "   Enter quantity: ";
+
+    cout << "  Enter quantity: ";
     cin >> quantity;
-    cout <<"  Enter price: ";
+
+    cout << "  Enter price: ";
     cin >> m_price;
-    for (int i = 0 ; i < 25 ; i++)
-   {
+
+    for (int i = 0; i < 25; i++) {
         char choice = 'y';
         int id;
-        cout<<" Enter ingredient ID " ;
-        cin>> id;
+
+        cout << "  Enter ingredient ID ";
+        cin >> id;
+
         Ingredient* ingAdd;
         ingAdd = z->search_ing(id);
-        cout<<ingAdd->getData();
+
+        cout << ingAdd->getData();
         ingglist[m_countt++] = ingAdd;
-        cout<<"\nDo u want to add a new ingredient? press y/n"<<endl;
-        cin>>choice;
-        if (choice== 'y')
+
+        cout << "\n  Do you want to add a new ingredient? Press y/n" << endl;
+        cin >> choice;
+
+        if (choice == 'y')
             continue;
         else if (choice == 'n')
             break;
-        else
-        {
-            cout<<" invalid choice , try again"<<endl;
-            cin>>choice;
+        else {
+            cout << "  Invalid choice, try again" << endl;
+            cin >> choice;
         }
     }
-    for (int i = 0 ; i < m_countt ; ++i)
-    {
-        cout<<ingglist[i]->getData();
+
+    for (int i = 0; i < m_countt; ++i) {
+        cout << ingglist[i]->getData();
     }
 }
 
-void Meal::calcPrice()
-{
-   for(int i = 0; i < ingSize; ++i)
-   {
-       m_price += inglist[i].getPrice();
-   }
+void Meal::calcPrice() {
+    for (int i = 0; i < ingSize; ++i) {
+        m_price += inglist[i].getPrice();
+    }
 }
 
-void Meal::getData()
-{
+void Meal::getData() {
     cout << "Name: " << m_name << endl;
-    cout << "Quantity: " << quantity << " items"<< endl;
+    cout << "Quantity: " << quantity << " items" << endl;
     cout << "Price: $" << m_price << endl;
 }
 
-void Meal::print_name_price()
-{
-    cout<<" Name : "<<m_name<<endl<<" price : "<<m_price;
+void Meal::print_name_price() {
+    cout << " Name : " << m_name << endl << " Price : " << m_price;
 }
 
-void Meal::update_price(){
-    cout<<"\nEdit meal price: \n\n"
-        <<"  Enter new price: ";
-    cin>>m_price;
+void Meal::update_price() {
+    cout << "\nEdit meal price:\n\n" << "  Enter new price: ";
+    cin >> m_price;
 }
-int Meal::getID(){
+
+int Meal::getID() {
     return m_id;
 }
 
-ostream& operator <<(ostream& out,Meal& i){
+ostream& operator <<(ostream& out, Meal& i) {
     i.getData();
     return out;
 }
 
-istream& operator >>(istream& in ,Meal* i){
-   i->setData();
+istream& operator >>(istream& in, Meal* i) {
+    i->setData();
     return in;
 }
 
-int Meal::getQuantity()
-{
+int Meal::getQuantity() {
     return quantity;
 }
 
-string Meal::getName()
-{
+string Meal::getName() {
     return m_name;
 }
 
-double Meal::getPrice()
-{
+double Meal::getPrice() {
     return m_price * orderQuantity;
 }
 
-void Meal::reduceQuantity(int n)
-{
+void Meal::reduceQuantity(int n) {
     quantity -= n;
-    for (int i = 0; i < ingSize; ++i)
-    {
+
+    for (int i = 0; i < ingSize; ++i) {
         inglist[i].reduceQuantity();
     }
 }
 
-void Meal::setOrderQuantity(int p)
-{
+void Meal::setOrderQuantity(int p) {
     orderQuantity = p;
 }
 
-int Meal::getOrderQuantity()
-{
+int Meal::getOrderQuantity() {
     return orderQuantity;
 }
 
-Meal::~Meal()
-{
-    //dtor
+Meal::~Meal() {
 }

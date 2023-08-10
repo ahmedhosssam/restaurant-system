@@ -12,7 +12,7 @@ menu::menu()
     m_mealCount = 0;
 
 }
-void menu :: add_meal(stock* a)
+void menu::add_meal(stock* a)
 {
     Meal* b = new Meal(a);
     cin>>b;
@@ -62,18 +62,19 @@ void menu::deleteMeal(){
     }
     if(found){
         cout<<"\nNo matching meal found!...\n";
-        cout<<"\nEnter any key to continue...";
     }
 }
 
 void menu::display_all(){
     if(m_mealCount!=0){
-        cout<<"Menu :\n";
-        for(int i=0; i<m_mealCount;++i)
-            cout<< i <<"- "<< mealList[i] <<endl;
-    }
-    else{
-        cout<< "There are not meals added yet!";
+        cout << "Menu :" << endl;
+
+        for(int i = 0; i < m_mealCount; ++i)
+            cout << i << "- " << mealList[i] << endl;
+
+        cout << "<<----------------------->>" << endl << endl;
+    } else {
+        cout<< "The menu is empty." << endl;
     }
 }
 

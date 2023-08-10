@@ -107,6 +107,10 @@ void Manager::display(){
     }
 }
 
+void Manager::showMenu() {
+    r.showMenu();
+}
+
 void Manager::kitchen(){
     int c = -1;
 

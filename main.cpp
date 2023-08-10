@@ -15,7 +15,8 @@ int main()
             cout << "Main menu: \n\n"
             << "  1. Kitchen\n"
             << "  2. Make Order\n"
-            << "  3. Report\n"
+            << "  3. Display Menu\n"
+            << "  4. Report\n"
             << "  0. Exit\n"
             << "\nEnter your choice: ";
 
@@ -32,6 +33,10 @@ int main()
             a.makeOrder();
             break;
         case 3:
+            system("clear");
+            a.showMenu();
+            break;
+        case 4:
             system("clear");
             a.reports();
             break;
