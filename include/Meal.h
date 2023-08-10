@@ -12,7 +12,7 @@ using namespace std;
 class Meal {
     public:
         Meal();
-        Meal(stock*);
+        Meal(Stock*);
         Meal(string m_name, int m_id, int quantity, Ingredient* inglist, int ingSize);
         void update_price();
         void updateMealIng();
@@ -45,7 +45,7 @@ class Meal {
         double orderQuantity;
         Ingredient* inglist;
         Ingredient** ingglist;
-        stock* z;
+        Stock* z;
         int m_countt=0;
 
 };

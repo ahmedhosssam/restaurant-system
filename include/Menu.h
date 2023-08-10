@@ -11,7 +11,7 @@ using namespace std;
 class Menu {
     public:
         Menu();
-        void add_meal(stock*);
+        void add_meal(Stock*);
         void add_meal(Meal m);
         void updateMealPrice();
         void deleteMeal();

@@ -20,20 +20,16 @@ void Manager::ingredients() {
         switch (c) {
             case 1:
                 system("clear");
-                a.add_ingrediant();
                 cout << "\nEnter any key to continue...";
                 break;
             case 2:
                 system("clear");
-                a.update_ingrediant_quantity();
                 break;
             case 3:
                 system("clear");
-                a.update_ingrediant_price();
                 break;
             case 4:
                 system("clear");
-                a.delete_ingrediant();
                 break;
             case 0:
                 return;
@@ -58,15 +54,12 @@ void Manager::meal() {
         switch (c) {
             case 1:
                 system("clear");
-                r.addMeal(&a);
                 break;
             case 2:
                 system("clear");
-                r.updateMealPrice();
                 break;
             case 3:
                 system("clear");
-                r.deleteMeal();
                 break;
             case 0:
                 return;

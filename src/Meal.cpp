@@ -3,7 +3,7 @@
 
 using namespace std;
 
-Meal::Meal(stock* a) {
+Meal::Meal(Stock* a) {
     z = a;
     inglist = new Ingredient[25];
     m_count = 0;

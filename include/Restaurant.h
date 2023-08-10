@@ -16,6 +16,7 @@ class Restaurant {
     vector<Ingredient> ingArray;
     double total_revenue;
     Menu m1;
+    Stock s1;
     int tableArrSize;
 
   public:
@@ -25,7 +26,7 @@ class Restaurant {
     void showMenu();
     void getIngredientsReports();
     void addMeal();
-    void addMeal(stock*);
+    void addMeal(Stock*);
     void updateMealIng();
     void updateMealPrice();
     void deleteMeal();

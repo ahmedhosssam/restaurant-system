@@ -160,7 +160,7 @@ void Restaurant::getIngredientsReports() {
         cout << ingArray[i].getData() << endl;
 }
 
-void Restaurant::addMeal(stock* a) {
+void Restaurant::addMeal(Stock* a) {
     m1.add_meal(a);
 }
 

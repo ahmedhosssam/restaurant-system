@@ -9,16 +9,16 @@ using namespace std;
 #define STOCK_H
 
 
-class stock {
+class Stock {
     public:
-        stock();
+        Stock();
         void add_ingrediant();
         void update_ingrediant_quantity();
         void update_ingrediant_price();
         void delete_ingrediant();
         void display_all();
-        Ingredient* search_ing(int);
-        virtual ~stock();
+        Ingredient* search_ing(int id);
+        virtual ~Stock();
 
     private:
         int m_ingCount;

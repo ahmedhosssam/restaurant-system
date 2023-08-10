@@ -12,7 +12,7 @@ Menu::Menu() {
 
 }
 
-void Menu::add_meal(stock* a) {
+void Menu::add_meal(Stock* a) {
     Meal* b = new Meal(a);
     cin>>b;
     mealList[m_mealCount++] = *b;

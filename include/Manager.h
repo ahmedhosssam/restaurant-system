@@ -21,7 +21,6 @@ class Manager {
         virtual ~Manager();
 
     private:
-        stock a;
         Restaurant r;
 
 };

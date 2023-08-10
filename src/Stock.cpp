@@ -1,15 +1,15 @@
 #include "../include/Stock.h"
 
-stock::stock() {
+Stock::Stock() {
 }
 
-void stock::add_ingrediant() {
+void Stock::add_ingrediant() {
     Ingredient* a = new Ingredient();
     cin >> a;
     ingList.push_back(a);
 }
 
-void stock::update_ingrediant_quantity() {
+void Stock::update_ingrediant_quantity() {
     int id;
     bool found = false;
 
@@ -28,7 +28,7 @@ void stock::update_ingrediant_quantity() {
     }
 }
 
-void stock::update_ingrediant_price() {
+void Stock::update_ingrediant_price() {
     int id;
     bool found = false;
 
@@ -47,7 +47,7 @@ void stock::update_ingrediant_price() {
     }
 }
 
-void stock::delete_ingrediant() {
+void Stock::delete_ingrediant() {
     int id;
     bool found = false;
 
@@ -61,7 +61,7 @@ void stock::delete_ingrediant() {
     }
 }
 
-void stock::display_all() {
+void Stock::display_all() {
     if(ingList.size()) {
         cout << "ingredient list: \n\n";
         for(int i = 0; i < static_cast<int>(ingList.size()); ++i) {
@@ -72,7 +72,7 @@ void stock::display_all() {
     }
 }
 
-Ingredient* stock::search_ing(int id) {
+Ingredient* Stock::search_ing(int id) {
     for (int i = 0; i <  static_cast<int>(ingList.size()); ++i ) {
         if (ingList[i]->getID() == id) {
             return ingList[i];
@@ -80,5 +80,5 @@ Ingredient* stock::search_ing(int id) {
     }
 }
 
-stock::~stock() {
+Stock::~Stock() {
 }
