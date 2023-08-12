@@ -57,6 +57,7 @@ void Manager::meal() {
         switch (c) {
             case 1:
                 system("clear");
+                r.addMeal();
                 break;
             case 2:
                 system("clear");

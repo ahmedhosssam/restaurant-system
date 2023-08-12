@@ -18,13 +18,13 @@ class Stock {
         void update_ingredient_price();
         void delete_ingredient();
         void display_all();
-        int returnIngNum();
-        Ingredient* search_ing(int id);
+        int returnIngNum(); // how many ingredients are there
+        Ingredient* return_ing(int id);
         ~Stock();
 
     private:
         int m_ingCount;
-        vector<Ingredient*> ingList;
+        vector<Ingredient*> ingList; // all of ingredients in the stock
 };
 
 #endif 

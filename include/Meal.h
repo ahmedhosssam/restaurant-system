@@ -13,7 +13,7 @@ class Meal {
     public:
         Meal();
         Meal(Stock*);
-        Meal(string m_name, int m_id, int quantity, Ingredient* inglist, int ingSize);
+        Meal(string name, int quantity, vector<Ingredient*> inglist);
         void update_price();
         void updateMealIng();
         void setData();
@@ -36,15 +36,12 @@ class Meal {
         virtual ~Meal();
 
     private:
-        string m_name;
-        int m_id;
-        int m_count=0;
-        int quantity;
-        int ingSize;
-        double m_price;
+        string name; // name of meal
+        int count = 0;
+        int quantity; // quantity of meal
+        double price; // total price of meal = total of ingPrice
         double orderQuantity;
-        Ingredient* inglist;
-        Ingredient** ingglist;
+        vector<Ingredient*> inglist;
         Stock* z;
         int m_countt=0;
 
