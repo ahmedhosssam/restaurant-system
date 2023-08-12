@@ -11,17 +11,15 @@ using namespace std;
 class Menu {
     public:
         Menu();
-        void add_meal(Stock*);
-        void add_meal(Meal m);
-        void updateMealPrice();
-        void deleteMeal();
+        void add_meal(Meal* m); 
+        void deleteMeal(int i);
         void display_all();
-        int getMealsNumber();
         Meal* getMeal(int n);
-        virtual ~Menu();
+        int getMealsNumber();
+        ~Menu();
 
     private:
         vector<Meal*> meallist;
 };
 
-#endif // MENU_H
+#endif
