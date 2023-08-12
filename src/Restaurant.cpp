@@ -153,6 +153,9 @@ void Restaurant::delete_ingredient() {
     s.delete_ingredient();
 }
 
+void Restaurant::addMeal() {
+}
+
 void Restaurant::addMeal(Meal* m) {
     m1.add_meal(m);
 }

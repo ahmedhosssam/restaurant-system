@@ -25,6 +25,7 @@ class Restaurant {
     void showMenu();
     void getIngredientsReports();
     void addMeal(Meal* m);
+    void addMeal();
     void add_ingredient();
     void update_ingredient(int i);
     void delete_ingredient();

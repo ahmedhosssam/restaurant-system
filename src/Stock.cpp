@@ -13,12 +13,14 @@ Stock::Stock() {
     int i_price;
     int i_quantity;
 
-    while(getline(ingredients, line)) {
+    while (getline(ingredients, line)) {
 
-        if(ingredients >> i_name >> i_price >> i_quantity) {
+        if (ingredients >> i_name >> i_price >> i_quantity) {
             Ingredient *i = new Ingredient(i_name, i_price, i_quantity);
             ingList.push_back(i);
-        } 
+        } else {
+            continue;
+        }
     }
     ingredients.close();
 }
