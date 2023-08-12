@@ -4,25 +4,17 @@
 using namespace std;
 
 Meal::Meal(string name, int quantity, Stock* s) : name(name), quantity(quantity), ptr_s(s) {
-    ptr_s->display_all();
-    int option;
-    int id;
-    bool entering = true;
+    chooseIngs();
+    calcPrice();
+}
 
-    cout << "Choose ingredients of your meal ( enter x to stop ): ";
-    while(entering) {
-        cin >> id;
-        if(id <= ptr_s->returnIngNum() && id >= 0) {
-            Ingredient* ing;
-            ing = ptr_s->return_ing(id);
-
-            inglist.push_back(ing);
-        } else if (id > ptr_s->returnIngNum() || id < 0) {
-            cout << "Error: out of range of ingredients numbers, please try again.\n";
-        } else {
-            break;
-        }
-    }
+Meal::Meal(Stock* s) : ptr_s(s) {
+    string name;
+    int quantity;
+    cout << "Enter the name of the meal: "; cin >> name;
+    cout << "Enter the quantity of the meal: "; cin >> quantity;
+    chooseIngs();
+    calcPrice();
 }
 
 Meal::Meal(string name, int quantity, vector<Ingredient*> inglist, Stock* s) : name(name), quantity(quantity), inglist(inglist), ptr_s(s) {
@@ -33,8 +25,8 @@ void Meal::updateMealIng() {
     int id;
     int option;
     
-    for (long unsigned int i = 0; i < inglist.size(); ++i) {
-        inglist[i].ing->getData();
+    for (Ingredient* i : inglist) {
+        i->getData();
         cout << "--------------\n";
     }
     /*cout << "Choose ingredient by id: ";
@@ -77,15 +69,42 @@ void Meal::updateMealIng() {
     }
     
 }
+
+// choose ingredients from Stock and put it into inglist
+void Meal::chooseIngs() {
+    int id;
+    bool entering = true;
+
+    ptr_s->display_all();
+    cout << "Choose ingredients of your meal ( enter x to stop ): ";
+
+    while(entering) {
+        cin >> id;
+        if(id <= ptr_s->returnIngNum() && id >= 0) {
+            Ingredient* ing;
+            ing = ptr_s->return_ing(id);
+            inglist.push_back(ing);
+        } else if (id > ptr_s->returnIngNum() || id < 0) {
+            cout << "Error: out of range of ingredients numbers, please try again.\n";
+        } else {
+            break;
+        }
+    }
+}
+
+void Meal::calcPrice() {
+    for (Ingredient* i : inglist) {
+        total_price += i->getPrice();
+    }
+}
+
+void Meal::getData() {}
+
 void Meal::setData() {}
 
 void Meal::setMealIng() {}
 
 void Meal::update_ing() {}
-
-void Meal::calcPrice() {}
-
-void Meal::getData() {}
 
 void Meal::setOrderQuantity(int q) {}
 
@@ -114,7 +133,7 @@ string Meal::getName() {
 }
 
 double Meal::getPrice() {
-    return price * orderQuantity;
+    return total_price * orderQuantity;
 }
 
 Meal::~Meal() {

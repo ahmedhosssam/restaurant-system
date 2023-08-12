@@ -13,6 +13,7 @@ class Meal {
     public:
         Meal(string name, int quantity, Stock* s); // to choose ingredients from Stock* s
         Meal(string name, int quantity, vector<Ingredient*> inglist, Stock* s);
+        Meal(Stock* s);
         void updateMealIng();
         void setData();
         void setMealIng();
@@ -32,10 +33,12 @@ class Meal {
         ~Meal();
 
     private:
+        void chooseIngs(); // choose ingredients from Stock and put it into inglist
+
         string name; // name of meal
         int quantity; // quantity of meal
         int orderQuantity;
-        double price; // total price of meal = total of ingPrice
+        double total_price = 0.00; // total price of meal = total of ingPrice
         vector<Ingredient*> inglist;
         Stock* ptr_s;
 };
