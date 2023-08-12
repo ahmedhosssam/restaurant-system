@@ -16,7 +16,7 @@ Stock::Stock() {
     while(getline(ingredients, line)) {
 
         if(ingredients >> i_name >> i_price >> i_quantity) {
-            Ingredient i(i_name, i_price, i_quantity);
+            Ingredient *i = new Ingredient(i_name, i_price, i_quantity);
             ingList.push_back(i);
         } 
     }
@@ -24,12 +24,12 @@ Stock::Stock() {
 }
 
 void Stock::add_ingredient() {
-    Ingredient a;
-    a.setData();
+    Ingredient* a = new Ingredient;
+    a->setData();
     ingList.push_back(a);
 }
 
-void Stock::add_ingredient(Ingredient i) {
+void Stock::add_ingredient(Ingredient* i) {
     ingList.push_back(i);
 }
 
@@ -42,8 +42,8 @@ void Stock::update_ingredient_quantity() {
     cin >> id;
 
     for(int i = 0; i < static_cast<int>(ingList.size()); ++i) {
-        if(ingList[i].getID() == id) {
-            ingList[i].update_quantity();
+        if(ingList[i]->getID() == id) {
+            ingList[i]->update_quantity();
             found = true;
             break;
         }
@@ -62,8 +62,8 @@ void Stock::update_ingredient_price() {
     cin >> id;
 
     for(int i = 0; i < m_ingCount; ++i) {
-        if(ingList[i].getID() == id) {
-            ingList[i].update_price();
+        if(ingList[i]->getID() == id) {
+            ingList[i]->update_price();
             found = true;
             break;
         }
@@ -94,19 +94,20 @@ void Stock::display_all() {
 
         for(int i = 0; i < static_cast<int>(ingList.size()); ++i) {
             cout << i << "- ";
-            ingList[i].getData();
+            ingList[i]->getData();
         }
     } else {
         cout << "There are not ingredients added yet!\n";
     }
 }
 
-Ingredient Stock::search_ing(int id) {
+Ingredient* Stock::search_ing(int id) {
     for (int i = 0; i <  static_cast<int>(ingList.size()); ++i ) {
-        if (ingList[i].getID() == id) {
+        if (ingList[i]->getID() == id) {
             return ingList[i];
         }
     }
+    return nullptr;
 }
 
 int Stock::returnIngNum() {
