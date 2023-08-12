@@ -19,9 +19,8 @@ Menu::Menu(Stock* s) : s_ptr(s) {
         string mealName;
         vector<Ingredient*> ingredients; // for meal
         iss >> mealName;
-        cout << mealName << endl;
         while (iss >> num) {
-            Ingredient* ing = s_ptr->return_ing(num);
+            Ingredient* ing = s_ptr->return_ing(num - 1);
             ingredients.push_back(ing);
         }
         Meal* newMeal = new Meal(mealName, 99, ingredients, s_ptr);
