@@ -16,8 +16,8 @@ class Ingredient {
         void reduceQuantity();
         int getID();
         double getPrice();
-        friend istream& operator >> (istream&,Ingredient*);
-        friend ostream& operator << (ostream&,Ingredient&);
+        friend istream& operator >> (istream&, Ingredient*);
+        friend ostream& operator << (ostream&, Ingredient&);
         virtual ~Ingredient();
 
     private:
