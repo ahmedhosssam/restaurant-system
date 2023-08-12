@@ -132,7 +132,7 @@ void Meal::getData() {
     }
 }
 
-void Meal::setOrderQuantity(int q) {
+void Meal::setQuantity(int q) {
     quantity = q;
 }
 
@@ -156,6 +156,14 @@ string Meal::getName() {
 
 double Meal::getPrice() {
     return total_price;
+}
+
+void Meal::reduceQuantity(int q) {
+    quantity -= q;
+}
+
+void Meal::setOrderQuantity(int q) {
+    orderQuantity = q;
 }
 
 Meal::~Meal() {

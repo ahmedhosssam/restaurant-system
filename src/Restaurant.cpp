@@ -30,7 +30,7 @@ void Restaurant::makeOrder() {
     int quantity;
     int option;
     int mealCounter = 0;
-    int clientPlace;    // takeAway || delivery || inRestaurant
+    int clientPlace; // takeAway || delivery || inRestaurant
     string option2;
 
     do
