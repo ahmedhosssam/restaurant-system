@@ -16,9 +16,7 @@ class Meal {
         Meal(Stock* s);
         void updateMealIng(); // done
         void setData(); // done
-        void setMealIng();
-        void update_ing();
-        void calcPrice();
+        void calcPrice(); // done
         void getData();
         void setOrderQuantity(int q);
         int getOrderQuantity();

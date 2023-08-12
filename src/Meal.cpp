@@ -75,7 +75,10 @@ void Meal::chooseIngs() {
     int id;
     bool entering = true;
 
+    inglist.clear(); // remove everything in inglist
+    calcPrice();
     ptr_s->display_all();
+
     cout << "Choose ingredients of your meal ( enter x to stop ): ";
 
     while(entering) {
