@@ -26,7 +26,7 @@ void Ingredient::setData() {
 
 void Ingredient::getData() {
     cout << "Name: " << name << endl
-         << "Price: " << price << endl
+         << "Price: $" << price << endl
          << "Quantity: " << quantity << endl;
     cout << "-------------\n";
 }

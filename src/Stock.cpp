@@ -47,22 +47,14 @@ void Stock::update_ingredient_quantity() {
 
 void Stock::update_ingredient_price() {
     int id;
-    bool found = false;
 
     display_all();
     cout<<"Enter ingredient id: ";
     cin >> id;
 
-    for(int i = 0; i < m_ingCount; ++i) {
-        if(ingList[i]->getID() == id) {
-            ingList[i]->update_price();
-            found = true;
-            break;
-        }
-    }
-    if(!found) {
-        cout << "\nNo matching ingredient found!...\n";
-    }
+    if(id > static_cast<int>(ingList.size()) || id < 0)
+        cout << "No matching ingredient found.\n";
+    else ingList[id]->update_price();
 }
 
 void Stock::delete_ingredient() {
