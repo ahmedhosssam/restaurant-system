@@ -11,19 +11,15 @@ using namespace std;
 
 class Meal {
     public:
-        Meal();
-        Meal(Stock*);
-        Meal(string name, int quantity, vector<Ingredient*> inglist);
-        void update_price();
+        Meal(string name, int quantity, vector<Ingredient*> inglist, Stock* s);
         void updateMealIng();
         void setData();
         void setMealIng();
-        void print_name_price();
-        void update_meal_ing();
+        void update_ing();
         void calcPrice();
         void getData();
-        void setOrderQuantity(int p);
-        void reduceQuantity(int n);
+        void setOrderQuantity(int q);
+        void update(int n);
         int getOrderQuantity();
         int getID();
         int getMealIng();
@@ -33,14 +29,14 @@ class Meal {
 
         friend istream& operator >>(istream&,Meal*);
         friend ostream& operator <<(ostream&,Meal&);
-        virtual ~Meal();
+        ~Meal();
 
     private:
         string name; // name of meal
         int count = 0;
         int quantity; // quantity of meal
+        int orderQuantity;
         double price; // total price of meal = total of ingPrice
-        double orderQuantity;
         vector<Ingredient*> inglist;
         Stock* z;
         int m_countt=0;
