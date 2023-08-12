@@ -20,6 +20,7 @@ class Meal {
         void getData();
         void reduceQuantity(int q);
         void setOrderQuantity(int q);
+        int getOrderQuantity();
         void setQuantity(int q);
         int getQuantity();
         double getPrice();

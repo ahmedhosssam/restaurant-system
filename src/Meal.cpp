@@ -166,5 +166,9 @@ void Meal::setOrderQuantity(int q) {
     orderQuantity = q;
 }
 
+int Meal::getOrderQuantity() {
+    return orderQuantity;
+}
+
 Meal::~Meal() {
 }
