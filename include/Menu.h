@@ -21,8 +21,7 @@ class Menu {
         virtual ~Menu();
 
     private:
-        int m_mealCount , m_MealSize;
-        Meal *mealList;
+        vector<Meal*> meallist;
 };
 
 #endif // MENU_H
