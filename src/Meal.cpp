@@ -116,12 +116,10 @@ void Meal::calcPrice() {
     for (Ingredient* i : inglist) {
         total_price += i->getPrice();
     }
+    total_price += (0.2 * total_price); // profit
 }
 
 void Meal::getData() {}
-
-
-void Meal::setMealIng() {}
 
 void Meal::update_ing() {}
 
