@@ -13,11 +13,8 @@ Meal::Meal(string name, int quantity, Stock* s) : name(name), quantity(quantity)
     while(entering) {
         cin >> id;
         if(id <= ptr_s->returnIngNum() && id >= 0) {
-            int quantity;
-            cout << "\tEnter quantity: "; cin >> quantity;
-            IngToken ing;
-            ing.ing = ptr_s->return_ing(id);
-            ing.quantity = quantity;
+            Ingredient* ing;
+            ing = ptr_s->return_ing(id);
 
             inglist.push_back(ing);
         } else if (id > ptr_s->returnIngNum() || id < 0) {
@@ -26,6 +23,10 @@ Meal::Meal(string name, int quantity, Stock* s) : name(name), quantity(quantity)
             break;
         }
     }
+}
+
+Meal::Meal(string name, int quantity, vector<Ingredient*> inglist, Stock* s) : name(name), quantity(quantity), inglist(inglist), ptr_s(s) {
+    calcPrice();
 }
 
 void Meal::updateMealIng() {
