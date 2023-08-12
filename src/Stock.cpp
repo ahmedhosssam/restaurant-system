@@ -6,9 +6,6 @@ using namespace std;
 #include "../include/Stock.h"
 
 Stock::Stock() {
-    Ingredient ii("hoho", 69, 64);
-    ingList.push_back(ii);
-
     ifstream ingredients("data/ingredients.txt");
 
     string line;
