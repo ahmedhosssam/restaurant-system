@@ -61,11 +61,10 @@ Menu::~Menu() {
     }
     meallist.clear();  
 
-    // You should also delete any dynamically allocated ingredients that may be left
     for (Meal* m : meallist) {
         const vector<Ingredient*>& ingredients = m->getIngredients();
         for (Ingredient* ing : ingredients) {
-            delete ing;  // Delete the Ingredient object
+            delete ing; 
         }
     }
 }
