@@ -9,13 +9,6 @@
 
 using namespace std;
 
-struct MealToken
-{
-    Meal* meal;
-    int quantity; // quantity of the meal in the order
-};
-
-
 class Order {
     public:
         virtual ~Order();
@@ -27,7 +20,7 @@ class Order {
     protected:
         int id;
         double total_price;
-        vector<MealToken> mealArr;
+        vector<Meal*> mealArr;
 };
 
 #endif 

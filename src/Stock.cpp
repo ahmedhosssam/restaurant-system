@@ -16,7 +16,7 @@ Stock::Stock() {
     while (getline(ingredients, line)) {
 
         if (ingredients >> i_name >> i_price >> i_quantity) {
-            Ingredient *i = new Ingredient(i_name, i_price, i_quantity);
+            Ingredient* i = new Ingredient(i_name, i_price, i_quantity);
             ingList.push_back(i);
         } else {
             continue;

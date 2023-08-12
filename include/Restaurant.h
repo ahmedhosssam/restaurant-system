@@ -14,8 +14,8 @@ class Restaurant {
     vector<Order*> orderArray; // for all orders that had been made
     vector<Table> tableArray;
     double total_revenue;
-    Menu m1;
     Stock s;
+    Menu* m1;
     int tableArrSize;
 
   public:

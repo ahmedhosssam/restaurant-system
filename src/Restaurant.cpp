@@ -16,6 +16,7 @@ using namespace std;
 
 Restaurant::Restaurant() {
     total_revenue = 0;
+    m1->setStock(&s);
     
     // Tables :
     for (int i = 0; i < 15; i++)
@@ -26,28 +27,26 @@ Restaurant::Restaurant() {
 
 void Restaurant::makeOrder() {
     vector<Meal*> mealList;
-    m1.display_all();
+    m1->display_all();
     int quantity;
     int option;
     int mealCounter = 0;
     int clientPlace; // takeAway || delivery || inRestaurant
     string option2;
 
-    do
-    {
+    do {
         cout << "Select a meal by its number: ";
         cin >> option;
-        if (option > m1.getMealsNumber()) {
+        if (option > m1->getMealsNumber()) {
             cout << "Please enter a valid number.\n";
             continue;
         }
 
-        Meal* currentMeal = m1.getMeal(option);
+        Meal* currentMeal = m1->getMeal(option);
         cout << "Enter quantity: ";
         cin >> quantity;
 
-        if (quantity <= 0 || quantity > currentMeal->getQuantity())
-        {
+        if (quantity <= 0 || quantity > currentMeal->getQuantity()) {
             cout << "Invalid quantity. Available quantity for a '" << currentMeal->getName() << "' is " << currentMeal->getQuantity() << endl;
             continue;
         }
@@ -70,43 +69,39 @@ void Restaurant::makeOrder() {
         cin >> clientPlace;
     } while (option2 == "y" || option2 == "Y");
 
-        switch (clientPlace)
-        {
-            case 0:
-            {
-                for (int i = 0; i < tableArrSize; ++i) {
-                    if (!tableArray[i].getStatus()) {
-                        Order* r1 = new InRestaurant(mealList, tableArray[i].getId());
-                        orderArray.push_back(r1);
-                        addToTotalRevenue(r1->getPrice());
-                        r1->printReciept();
-                        tableArray[i].updateStatus();
-                        break;
-                    }
+    switch (clientPlace) {
+        case 0: {
+            for (int i = 0; i < tableArrSize; ++i) {
+                if (!tableArray[i].getStatus()) {
+                    Order* r1 = new InRestaurant(mealList, tableArray[i].getId());
+                    orderArray.push_back(r1);
+                    addToTotalRevenue(r1->getPrice());
+                    r1->printReciept();
+                    tableArray[i].updateStatus();
+                    break;
                 }
-                break;
             }
-            case 1:
-            {
-                Order* d1 = new Delivery(mealList);
-                orderArray.push_back(d1);
-                addToTotalRevenue(d1->getPrice());
-                d1->printReciept();
-                cout << "test\n";
-                break;
-            }
-            case 2:
-            {
-                Order* t1 = new TakeAway(mealList);
-                orderArray.push_back(t1);
-                addToTotalRevenue(t1->getPrice());
-                t1->printReciept();
-                break;
-            }
-            default:
-                cout << "Invalid choice." << endl;
-                break;
+            break;
         }
+        case 1: {
+            Order* d1 = new Delivery(mealList);
+            orderArray.push_back(d1);
+            addToTotalRevenue(d1->getPrice());
+            d1->printReciept();
+            cout << "test\n";
+            break;
+        }
+        case 2: {
+            Order* t1 = new TakeAway(mealList);
+            orderArray.push_back(t1);
+            addToTotalRevenue(t1->getPrice());
+            t1->printReciept();
+            break;
+        }
+        default:
+            cout << "Invalid choice." << endl;
+            break;
+    }
 }
 
 void Restaurant::addToTotalRevenue(double orderPrice) {
@@ -118,7 +113,7 @@ double Restaurant::getTotalRevenue() {
 }
 
 void Restaurant::showMenu() {
-    m1.display_all();
+    m1->display_all();
 }
 
 void Restaurant::getOrdersReports() {
@@ -128,7 +123,7 @@ void Restaurant::getOrdersReports() {
 }
 
 void Restaurant::getMealsReports() {
-    m1.display_all();
+    m1->display_all();
 }
 
 void Restaurant::getIngredientsReports() {
@@ -157,11 +152,11 @@ void Restaurant::addMeal() {
 }
 
 void Restaurant::addMeal(Meal* m) {
-    m1.add_meal(m);
+    m1->add_meal(m);
 }
 
 void Restaurant::deleteMeal(int i) {
-    m1.deleteMeal(i);
+    m1->deleteMeal(i);
 }
 
 Restaurant::~Restaurant() {

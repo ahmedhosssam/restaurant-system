@@ -8,6 +8,7 @@ using namespace std;
 #ifndef STOCK_H
 #define STOCK_H
 
+// includes ingredients
 class Stock {
     public:
         Stock();

@@ -4,9 +4,11 @@ Tomato 5 99
 Beef 6 99
 Pickles 2 99
 Cheddar 4 99
+Bread 2 99
 Onion 3 99
 Mushrooms 3 99
 Bacon 5 99
+Chicken 6 99
 Lettuce 2 99
 Barbecue 4 99
 Jalapeños 2 99

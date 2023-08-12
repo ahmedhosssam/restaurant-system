@@ -1,12 +1,13 @@
-#include <iostream>
-#include "Stock.h"
-#include "Menu.h"
-#include "Restaurant.h"
-#include <unistd.h>
-using namespace std;
 #ifndef MANAGER_H
 #define MANAGER_H
 
+#include <iostream>
+
+#include "Stock.h"
+#include "Menu.h"
+#include "Restaurant.h"
+
+using namespace std;
 // this class just for layout
 class Manager {
     public:
