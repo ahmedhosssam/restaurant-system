@@ -149,6 +149,10 @@ void Restaurant::update_ingredient(int i) {
     }
 }
 
+void Restaurant::delete_ingredient() {
+    s.delete_ingredient();
+}
+
 void Restaurant::addMeal(Stock* a) {
     m1.add_meal(a);
 }

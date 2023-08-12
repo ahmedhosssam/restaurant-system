@@ -59,17 +59,14 @@ void Stock::update_ingredient_price() {
 
 void Stock::delete_ingredient() {
     int id;
-    bool found = false;
-
+    
     display_all();
     cout << "Enter ingredient id: ";
     cin >> id;
 
-    ingList.erase(ingList.begin() + id);
-
-    if(!found) {
-        cout << "\nNo matching ingredient found.\n";
-    }
+    if(id > static_cast<int>(ingList.size()) || id < 0)
+        cout << "No matching ingredient found.\n";
+    else ingList.erase(ingList.begin() + id);
 }
 
 void Stock::display_all() {

@@ -32,6 +32,7 @@ void Manager::ingredients() {
                 break;
             case 4:
                 system("clear");
+                r.delete_ingredient();
                 break;
             case 0:
                 return;
