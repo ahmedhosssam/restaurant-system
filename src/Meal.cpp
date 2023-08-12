@@ -92,6 +92,26 @@ void Meal::chooseIngs() {
     }
 }
 
+void Meal::setData() {
+    string new_name;
+    string new_quantity;
+    string IsUpdateIng = 'x';
+    bool entering = true;
+    
+    cout << "Enter the name of the meal: "; cin >> new_name;
+    cout << "Enter the quantity: "; cin >> new_quantity;
+    while (entering) {
+        cout << "Do you want to update the ingredient? (y / n)"; cin >> updateIng;
+        if (IsUpdateIng == 'y' || IsUpdateIng == 'Y') {
+            chooseIngs();
+        } else if (IsUpdateIng == 'n' || IsUpdateIng == 'N') {
+            break;
+        } else {
+            cout << "Invalid Choice.\n";
+        }
+    }
+}
+
 void Meal::calcPrice() {
     for (Ingredient* i : inglist) {
         total_price += i->getPrice();
@@ -100,7 +120,6 @@ void Meal::calcPrice() {
 
 void Meal::getData() {}
 
-void Meal::setData() {}
 
 void Meal::setMealIng() {}
 

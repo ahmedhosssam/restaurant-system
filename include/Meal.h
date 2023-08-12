@@ -14,8 +14,8 @@ class Meal {
         Meal(string name, int quantity, Stock* s); // to choose ingredients from Stock* s
         Meal(string name, int quantity, vector<Ingredient*> inglist, Stock* s);
         Meal(Stock* s);
-        void updateMealIng();
-        void setData();
+        void updateMealIng(); // done
+        void setData(); // done
         void setMealIng();
         void update_ing();
         void calcPrice();
