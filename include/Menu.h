@@ -14,9 +14,9 @@ class Menu {
         void add_meal(Meal* m); 
         void deleteMeal(int i);
         void display_all();
+        void setStock(Stock *s);
         Meal* getMeal(int n);
         int getMealsNumber();
-        void setStock(Stock *s);
         ~Menu();
 
     private:

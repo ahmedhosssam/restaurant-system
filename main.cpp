@@ -41,7 +41,6 @@ int main() {
             break;
         default:
             cout << "Invalid input! please try again...";
-            sleep(3);
         }
     }
 

@@ -160,4 +160,9 @@ void Restaurant::deleteMeal(int i) {
 }
 
 Restaurant::~Restaurant() {
+    delete m1; 
+
+    for (Order* order : orderArray) {
+        delete order;
+    }
 }

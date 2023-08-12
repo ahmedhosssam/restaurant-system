@@ -25,6 +25,7 @@ class Meal {
         int getQuantity();
         double getPrice();
         string getName();
+        vector<Ingredient*> getIngredients();
 
         friend istream& operator >>(istream&,Meal*);
         friend ostream& operator <<(ostream&,Meal&);

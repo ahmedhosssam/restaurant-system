@@ -125,7 +125,7 @@ void Meal::calcPrice() {
 void Meal::getData() {
     cout << "Name: " << name << endl;
     cout << "Price: $" << total_price << endl;
-    cout << "Quantity: $" << quantity << endl;
+    cout << "Quantity: " << quantity << endl;
 
     for(Ingredient* ing : inglist) {
         ing->getData();
@@ -168,6 +168,10 @@ void Meal::setOrderQuantity(int q) {
 
 int Meal::getOrderQuantity() {
     return orderQuantity;
+}
+
+vector<Ingredient*> Meal::getIngredients() {
+    return inglist;
 }
 
 Meal::~Meal() {

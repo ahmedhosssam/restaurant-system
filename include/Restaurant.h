@@ -15,7 +15,7 @@ class Restaurant {
     vector<Table> tableArray;
     double total_revenue;
     Stock s;
-    Menu* m1;
+    Menu* m1 = new Menu(&s);
     int tableArrSize;
 
   public:
