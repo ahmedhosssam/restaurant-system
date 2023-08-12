@@ -13,6 +13,8 @@ Meal::Meal(Stock* s) : ptr_s(s) {
     int quantity;
     cout << "Enter the name of the meal: "; cin >> name;
     cout << "Enter the quantity of the meal: "; cin >> quantity;
+    Meal::name = name;
+    Meal::quantity = quantity;
     chooseIngs();
     calcPrice();
 }
