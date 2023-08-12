@@ -8,7 +8,6 @@ using namespace std;
 #ifndef STOCK_H
 #define STOCK_H
 
-
 class Stock {
     public:
         Stock();

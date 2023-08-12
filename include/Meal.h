@@ -9,8 +9,15 @@
 #include "Stock.h"
 using namespace std;
 
+struct IngToken
+{
+    Ingredient* ing;
+    int quantity; // quantity of each ingredient in inglist
+};
+
 class Meal {
     public:
+        Meal(string name, int quantity, Stock* s); // to choose ingredients from Stock* s
         Meal(string name, int quantity, vector<Ingredient*> inglist, Stock* s);
         void updateMealIng();
         void setData();
@@ -19,7 +26,6 @@ class Meal {
         void calcPrice();
         void getData();
         void setOrderQuantity(int q);
-        void update(int n);
         int getOrderQuantity();
         int getID();
         int getMealIng();
@@ -33,14 +39,11 @@ class Meal {
 
     private:
         string name; // name of meal
-        int count = 0;
         int quantity; // quantity of meal
         int orderQuantity;
         double price; // total price of meal = total of ingPrice
-        vector<Ingredient*> inglist;
-        Stock* z;
-        int m_countt=0;
-
+        vector<IngToken> inglist;
+        Stock* ptr_s;
 };
 
 #endif 
