@@ -36,8 +36,7 @@ void Meal::updateMealIng() {
     
     cout << "Choose your option:\n"
          << "\t1- Add a new ingredient to the meal.\n"
-         << "\t2- Update the quantity of an ingredient.\n"
-         << "\t3- Delete an ingredient.\n";
+         << "\t2- Delete an ingredient.\n";
     cin >> option;
     
     switch (option)
@@ -47,9 +46,10 @@ void Meal::updateMealIng() {
                 ptr_s->display_all();
                 cout << "Choose an ingredient by id: ";
                 cin >> id;
-                if(id <= static_cast<int>(inglist.size()) && id >= 0)
+                if(id <= static_cast<int>(inglist.size()) && id >= 0) {
                     Ingredient* ing = ptr_s->return_ing(id);
                     inglist.push_back(ing);
+                }
                 else { 
                     cout << "No matching ingredient found, please try again.\n";
                 }
@@ -58,16 +58,14 @@ void Meal::updateMealIng() {
         case 2:
             {
                 cin >> id;
-                //Ingredient* ing = inglist[id];
-
+                inglist.erase(inglist.begin() + id);
+                break;
             }
-        case 3:
+            default:
             {
-
+                cout << "Error: Invalid choice.\n";
+                break;
             }
-        
-        default:
-            break;
     }
     
 }
