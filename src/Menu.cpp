@@ -21,8 +21,8 @@ Menu::Menu(Stock* s) : s_ptr(s) {
         iss >> mealName;
         cout << mealName << endl;
         while (iss >> num) {
-            Ingredient* ing = s_ptr->return_ing(num - 1);
-            //ingredients.push_back(ing);
+            Ingredient* ing = s_ptr->return_ing(num);
+            ingredients.push_back(ing);
         }
         Meal* newMeal = new Meal(mealName, 99, ingredients, s_ptr);
         meallist.push_back(newMeal);

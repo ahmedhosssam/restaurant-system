@@ -85,12 +85,7 @@ void Stock::display_all() {
 }
 
 Ingredient* Stock::return_ing(int id) {
-    for (int i = 0; i <  static_cast<int>(ingList.size()); ++i ) {
-        if (ingList[i]->getID() == id) {
-            return ingList[i];
-        }
-    }
-    return nullptr;
+    return ingList[id];
 }
 
 int Stock::returnIngNum() {

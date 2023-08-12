@@ -126,10 +126,7 @@ void Meal::getData() {
     cout << "Name: " << name << endl;
     cout << "Price: $" << total_price << endl;
     cout << "Quantity: " << quantity << endl;
-
-    for(Ingredient* ing : inglist) {
-        ing->getData();
-    }
+    cout << "-----------------\n";
 }
 
 void Meal::setQuantity(int q) {
