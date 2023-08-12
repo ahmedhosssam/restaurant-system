@@ -98,16 +98,16 @@ void Meal::chooseIngs() {
 void Meal::setData() {
     string new_name;
     string new_quantity;
-    string IsUpdateIng = 'x';
+    string IsUpdateIng = "x";
     bool entering = true;
     
     cout << "Enter the name of the meal: "; cin >> new_name;
     cout << "Enter the quantity: "; cin >> new_quantity;
     while (entering) {
-        cout << "Do you want to update the ingredient? (y / n)"; cin >> updateIng;
-        if (IsUpdateIng == 'y' || IsUpdateIng == 'Y') {
+        cout << "Do you want to update the ingredient? (y / n)"; cin >> IsUpdateIng;
+        if (IsUpdateIng == "y" || IsUpdateIng == "Y") {
             chooseIngs();
-        } else if (IsUpdateIng == 'n' || IsUpdateIng == 'N') {
+        } else if (IsUpdateIng == "n" || IsUpdateIng == "N") {
             break;
         } else {
             cout << "Invalid Choice.\n";
@@ -132,15 +132,9 @@ void Meal::getData() {
     }
 }
 
-void Meal::update_ing() {}
-
-void Meal::setOrderQuantity(int q) {}
-
-int Meal::getOrderQuantity() { return 1; }
-
-int Meal::getID() { return 1;}
-
-int Meal::getMealIng() { return 1; }
+void Meal::setOrderQuantity(int q) {
+    quantity = q;
+}
 
 ostream& operator << (ostream& out, Meal& i) {
     i.getData();
@@ -161,7 +155,7 @@ string Meal::getName() {
 }
 
 double Meal::getPrice() {
-    return total_price * orderQuantity;
+    return total_price;
 }
 
 Meal::~Meal() {
