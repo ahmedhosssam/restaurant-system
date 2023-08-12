@@ -144,6 +144,8 @@ void Restaurant::update_ingredient(int i) {
         s.update_ingredient_quantity();
     } else if (i == 2) {
         s.update_ingredient_price();
+    } else {
+        cout << "Invalid choice\n";
     }
 }
 
