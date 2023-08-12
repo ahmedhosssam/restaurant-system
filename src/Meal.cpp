@@ -122,7 +122,14 @@ void Meal::calcPrice() {
     total_price += (0.2 * total_price); // profit
 }
 
-void Meal::getData() {}
+void Meal::getData() {
+    cout << "Name: " << name << endl;
+    cout << "Price: $" << quantity << endl;
+
+    for(Ingredient* ing : inglist) {
+        ing->getData();
+    }
+}
 
 void Meal::update_ing() {}
 

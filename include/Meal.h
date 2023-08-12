@@ -17,7 +17,7 @@ class Meal {
         void updateMealIng(); // done
         void setData(); // done
         void calcPrice(); // done
-        void getData();
+        void getData(); // done
         void setOrderQuantity(int q);
         int getOrderQuantity();
         int getID();
