@@ -10,9 +10,6 @@
 class TakeAway : public Order {
     public:
         TakeAway(vector<Meal*> mealArr);
-        void calcPrice();
-        double getPrice();
-        void printReciept();
 };
 
 #endif 

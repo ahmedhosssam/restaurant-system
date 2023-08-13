@@ -19,7 +19,7 @@ class Order {
 
     protected:
         int id;
-        double total_price;
+        double total_price = 0;
         vector<Meal*> mealArr;
 };
 
