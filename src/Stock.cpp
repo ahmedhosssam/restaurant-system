@@ -6,7 +6,7 @@ using namespace std;
 #include "../include/Stock.h"
 
 Stock::Stock() {
-    //ifstream ifile("data/ingredients.txt"); // file of ingredients data
+    fstream ingfile("data/ingredients.txt", ofstream::out | ofstream::trunc); // file of ingredients data, opened here just to clean it
     fstream file("data/start_ing.txt"); // reading starting data for ingredients
 
     string line;
@@ -14,8 +14,11 @@ Stock::Stock() {
     double i_price;
     double i_quantity;
 
-    while (getline(file, line)) {
+    if(ingfile.is_open()) {
+        ingfile.close(); // to clear it when Stock is created
+    }
 
+    while (getline(file, line)) {
         // to read 
         if (file >> i_name >> i_price >> i_quantity) {
             Ingredient* i = new Ingredient(i_name, i_price, i_quantity);

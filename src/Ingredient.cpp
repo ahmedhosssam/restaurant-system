@@ -54,8 +54,10 @@ int Ingredient::getID() {
 }
 
 void Ingredient::update_ing_in_txt() {
-    ofstream file("data/ingredients.txt", ios::app);
-    string data = name + " " + to_string(price) + " " + to_string(quantity) + "\n";
+    fstream file("data/ingredients.txt", ios::app);
+    string data = name + " " + to_string(price) + " " + to_string(quantity) + "\n"; // i.e Cheese 4 69
+    string line;
+   
     if (file.is_open()) {
         file << data;
     } else {
