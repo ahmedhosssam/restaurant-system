@@ -151,6 +151,8 @@ void Restaurant::delete_ingredient() {
 }
 
 void Restaurant::addMeal() {
+    Meal* newMeal = new Meal(&s);
+    m1->add_meal(newMeal);
 }
 
 void Restaurant::addMeal(Meal* m) {

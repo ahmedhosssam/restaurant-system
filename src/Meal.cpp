@@ -72,7 +72,7 @@ void Meal::updateMealIng() {
 
 // choose ingredients from Stock and put it into inglist
 void Meal::chooseIngs() {
-    int id;
+    string id;
     bool entering = true;
 
     inglist.clear(); // remove everything in inglist
@@ -83,15 +83,27 @@ void Meal::chooseIngs() {
 
     while(entering) {
         cin >> id;
-        if(id <= ptr_s->returnIngNum() && id >= 0) {
-            Ingredient* ing;
-            ing = ptr_s->return_ing(id);
-            inglist.push_back(ing);
-        } else if (id > ptr_s->returnIngNum() || id < 0) {
-            cout << "Error: out of range of ingredients numbers, please try again.\n";
-        } else {
-            break;
+        if (id == "x" || id == "X") { entering = false; break; }
+
+        try {
+            int intID = stoi(id);
+
+            if(intID < ptr_s->returnIngNum() && intID >= 0) {
+                Ingredient* ing;
+                ing = ptr_s->return_ing(intID);
+                inglist.push_back(ing);
+            } else if (intID >= ptr_s->returnIngNum() || intID < 0) {
+                cout << "Error: out of range of ingredients numbers, please try again.\n";
+            } else {
+                entering = false;
+                break;
+            }
         }
+        catch(const std::invalid_argument& e) {
+            cout << "Please enter a valid argument.\n";
+        }
+        
+        
     }
 }
 
