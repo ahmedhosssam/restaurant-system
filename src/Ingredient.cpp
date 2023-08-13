@@ -1,9 +1,15 @@
+#include <fstream>
+
 #include "../include/Ingredient.h"
 
-Ingredient::Ingredient() { }
+Ingredient::Ingredient() {
+    setData();
+    update_ing_in_txt();
+}
 
-Ingredient::Ingredient(string name, double price, int quantity) : name(name), price(price), quantity(quantity)
-{ }
+Ingredient::Ingredient(string name, double price, int quantity) : name(name), price(price), quantity(quantity) {
+    update_ing_in_txt();
+}
 
 double Ingredient::getPrice() {
     return price;
@@ -45,6 +51,17 @@ void Ingredient::update_price() {
 
 int Ingredient::getID() {
     return id;
+}
+
+void Ingredient::update_ing_in_txt() {
+    ofstream file("data/ingredients.txt", ios::app);
+    string data = name + " " + to_string(price) + " " + to_string(quantity) + "\n";
+    if (file.is_open()) {
+        file << data;
+    } else {
+        cout << "Failed to open ingredients file\n";
+    }
+
 }
 
 istream& operator >> (istream& in ,Ingredient* i) {

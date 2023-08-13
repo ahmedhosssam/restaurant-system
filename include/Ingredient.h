@@ -21,6 +21,7 @@ class Ingredient {
         virtual ~Ingredient();
 
     private:
+        void update_ing_in_txt(); // update the ingredient data in ingredient.txt
         string name;
         double price;
         int quantity, id;

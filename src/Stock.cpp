@@ -27,7 +27,6 @@ Stock::Stock() {
 
 void Stock::add_ingredient() {
     Ingredient* a = new Ingredient;
-    a->setData();
     ingList.push_back(a);
 }
 
