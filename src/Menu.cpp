@@ -38,8 +38,9 @@ void Menu::deleteMeal(int i) {
 }
 
 void Menu::display_all() {
-    for(Meal* m : meallist) {
-        m->getData();
+    for(int i = 0; i < static_cast<int>(meallist.size()); ++i) {
+        cout << i << "- ";
+        meallist[i]->getData();
     }
 }
 

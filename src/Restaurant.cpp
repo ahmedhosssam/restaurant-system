@@ -30,15 +30,14 @@ void Restaurant::makeOrder() {
     m1->display_all();
     int quantity;
     int option;
-    int mealCounter = 0;
     int clientPlace; // takeAway || delivery || inRestaurant
-    string option2;
+    string option2 = "y";
 
-    do {
+    while (true) {
         cout << "Select a meal by its number: ";
         cin >> option;
         if (option > m1->getMealsNumber()) {
-            cout << "Please enter a valid number.\n";
+            cout << "\n<<-- Please enter a valid number -->>\n\n";
             continue;
         }
 
@@ -47,27 +46,30 @@ void Restaurant::makeOrder() {
         cin >> quantity;
 
         if (quantity <= 0 || quantity > currentMeal->getQuantity()) {
-            cout << "Invalid quantity. Available quantity for a '" << currentMeal->getName() << "' is " << currentMeal->getQuantity() << endl;
+            cout << "\n<<-- Invalid quantity. Available quantity for a '" << currentMeal->getName() << "' is " << currentMeal->getQuantity() << " -->>\n\n" << endl;
             continue;
         }
 
-        currentMeal->reduceQuantity(quantity);
-        currentMeal->setOrderQuantity(quantity);
+        currentMeal->updateQuantity(quantity);
 
         mealList.push_back(currentMeal);
 
-        mealCounter++;
-
         cout << "Want to add another meal? (y/n): ";
         cin >> option2;
-
-        cout << "Choose a location: \n";
-        cout << "0: In Restaurant\n";
-        cout << "1: Delivery\n";
-        cout << "2: Take Away\n";
-        cout << "Enter your choice: ";
-        cin >> clientPlace;
-    } while (option2 == "y" || option2 == "Y");
+        
+        if (option2 == "y" || option2 == "Y") {
+            continue;
+        } else {
+            cout << "Choose a location: \n";
+            cout << "0: In Restaurant\n";
+            cout << "1: Delivery\n";
+            cout << "2: Take Away\n";
+            cout << "Enter your choice: ";
+            cin >> clientPlace;
+            
+            break;
+        }
+    } 
 
     switch (clientPlace) {
         case 0: {

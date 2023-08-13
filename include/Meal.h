@@ -17,13 +17,15 @@ class Meal {
         void updateMealIng();
         void setData();
         void calcPrice();
+        void calcOrderPrice();
         void getData();
-        void reduceQuantity(int q);
         void setOrderQuantity(int q);
+        void updateQuantity(int q);
         int getOrderQuantity();
         void setQuantity(int q);
         int getQuantity();
         double getPrice();
+        double getOrderPrice();
         string getName();
         vector<Ingredient*> getIngredients();
 
@@ -38,6 +40,7 @@ class Meal {
         int quantity; // quantity of meal
         int orderQuantity = 0;
         double total_price = 0.00; // total price of meal = total of ingPrice
+        double orderPrice = 0.00;
         vector<Ingredient*> inglist;
         Stock* ptr_s;
 };

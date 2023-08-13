@@ -115,11 +115,21 @@ void Meal::setData() {
     }
 }
 
+// to calculat the price of the meal itself, regards of any quantity
 void Meal::calcPrice() {
     for (Ingredient* i : inglist) {
         total_price += i->getPrice();
     }
     total_price += (0.2 * total_price); // profit
+}
+
+// to calculate the price of the meal in the order
+void Meal::calcOrderPrice() {
+    orderPrice = total_price * orderQuantity;
+}
+
+double Meal::getOrderPrice() {
+    return orderPrice;
 }
 
 void Meal::getData() {
@@ -129,8 +139,11 @@ void Meal::getData() {
     cout << "-----------------\n";
 }
 
-void Meal::setQuantity(int q) {
-    quantity = q;
+// it is called after the order is made
+void Meal::updateQuantity(int q) {
+    orderQuantity = q;  // quantity in order
+    quantity -= q; // update quantity available in the stock
+    calcOrderPrice();
 }
 
 ostream& operator << (ostream& out, Meal& i) {
@@ -153,14 +166,6 @@ string Meal::getName() {
 
 double Meal::getPrice() {
     return total_price;
-}
-
-void Meal::reduceQuantity(int q) {
-    quantity -= q;
-}
-
-void Meal::setOrderQuantity(int q) {
-    orderQuantity = q;
 }
 
 int Meal::getOrderQuantity() {

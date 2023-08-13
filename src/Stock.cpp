@@ -55,6 +55,7 @@ void Stock::update_ingredient_price() {
     int id;
 
     display_all();
+
     cout<<"Enter ingredient id: ";
     cin >> id;
 
