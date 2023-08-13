@@ -8,8 +8,6 @@
 class InRestaurant : public Order {
     public:
         InRestaurant(vector<Meal*> mealArr, int tableId);
-        void calcPrice();
-        double getPrice();
         void printReciept();
         virtual ~InRestaurant();
 
