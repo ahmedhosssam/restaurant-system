@@ -2,7 +2,6 @@
 #define INRESTAURANT_H
 
 #include <vector>
-
 #include "Order.h"
 
 class InRestaurant : public Order {

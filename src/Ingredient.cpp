@@ -1,5 +1,4 @@
 #include <fstream>
-
 #include "../include/Ingredient.h"
 
 Ingredient::Ingredient() {

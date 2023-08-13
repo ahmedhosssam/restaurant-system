@@ -1,9 +1,9 @@
-#include <iostream>
-#include <string>
-using namespace std;
 #ifndef INGREDIANT_H
 #define INGREDIANT_H
 
+#include <iostream>
+#include <string>
+using namespace std;
 
 class Ingredient {
     public:

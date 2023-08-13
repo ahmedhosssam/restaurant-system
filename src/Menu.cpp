@@ -13,16 +13,20 @@ Menu::Menu(Stock* s) : s_ptr(s) {
         cerr << "Failed to open the file." << endl;
     }
     string line;
+
     while (getline(meals, line)) {
         istringstream iss(line);
         int num;
         string mealName;
         vector<Ingredient*> ingredients; // for meal
+
         iss >> mealName;
+
         while (iss >> num) {
             Ingredient* ing = s_ptr->return_ing(num - 1);
             ingredients.push_back(ing);
         }
+
         Meal* newMeal = new Meal(mealName, 99, ingredients, s_ptr);
         meallist.push_back(newMeal);
     }

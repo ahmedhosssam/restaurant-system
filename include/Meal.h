@@ -7,6 +7,7 @@
 
 #include "Ingredient.h"
 #include "Stock.h"
+
 using namespace std;
 
 class Meal {

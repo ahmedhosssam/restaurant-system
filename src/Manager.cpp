@@ -2,6 +2,42 @@
 
 Manager::Manager() {}
 
+void Manager::kitchen() {
+    int c = -1;
+
+    while(c != 0) {
+        cout<<"Kitchen: \n\n"
+            << "  1.Ingredients\n"
+            << "  2.Meals\n"
+            << "  3.Display\n"
+            << "  0.Return\n"
+            << "\nEnter your choice: ";
+
+        cin >> c;
+
+        switch(c) {
+        case 1:
+            system("clear");
+            ingredients();
+            break;
+        case 2:
+            system("clear");
+            meal();
+            break;
+        case 3:
+            system("clear");
+            display();
+            break;
+        case 0:
+            system("clear");
+            return;
+        default:
+            cout<<"\nInvalid input! please try again...";
+            sleep(3);
+        }
+    }
+}
+
 void Manager::ingredients() {
     int c = -1;
     while (c != 0) {
@@ -97,7 +133,7 @@ void Manager::display(){
         case 0:
             return;
         default:
-            cout << "\nInvalid input! please try again...\n";
+            cout << "\nInvalid input! please try again.\n";
             sleep(3);
             system("clear");
         }
@@ -108,43 +144,6 @@ void Manager::showMenu() {
     r.showMenu();
 }
 
-void Manager::kitchen(){
-    int c = -1;
-
-    while(c != 0) {
-        cout<<"Kitchen: \n\n"
-            << "  1.Ingredients\n"
-            << "  2.Meal\n"
-            << "  3.Display\n"
-            << "  0.Return\n"
-            << "\nEnter your choice: ";
-
-        cin >> c;
-
-        switch(c) {
-        case 1:
-            system("clear");
-            ingredients();
-            break;
-        case 2:
-            system("clear");
-            meal();
-            break;
-        case 3:
-            system("clear");
-            display();
-            break;
-        case 0:
-            system("clear");
-            return;
-        default:
-            cout<<"\nInvalid input! please try again...";
-            sleep(3);
-
-        }
-    }
-}
-
 void Manager::makeOrder() {
     r.makeOrder();
 }
@@ -152,13 +151,13 @@ void Manager::makeOrder() {
 void Manager::reports() {
     int c = -1;
 
-    while(c != 0){
+    while(c != 0) {
         cout<<"Reports: \n\n"
-            <<"  1.Ingredients report\n"
-            <<"  2.Meals report\n"
-            <<"  3.Orders report\n"
-            <<"  4.Total revenue\n"
-            <<"  0.return\n"
+            <<"  1.Ingredients Report.\n"
+            <<"  2.Meals Report.\n"
+            <<"  3.Orders Report.\n"
+            <<"  4.Total Revenue.\n"
+            <<"  0.Return.\n"
             <<"\nEnter your choice: ";
         cin >> c;
 
@@ -173,14 +172,15 @@ void Manager::reports() {
             r.getOrdersReports();
             break;
         case 4:
-            cout << "$" << r.getTotalRevenue() << endl;
+        {
+            cout << "\n\n\t<<--- $" << r.getTotalRevenue() << " -->>\n\n";
+        }
             break;
         case 0:
             return;
         default:
             cout << "\nInvalid input! please try again...";
             sleep(3);
-
         }
     }
 }

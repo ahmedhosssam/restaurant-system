@@ -1,3 +1,6 @@
+#ifndef STOCK_H
+#define STOCK_H
+
 #include <iostream>
 #include <vector>
 #include <unistd.h>
@@ -5,8 +8,6 @@
 #include "Ingredient.h"
 
 using namespace std;
-#ifndef STOCK_H
-#define STOCK_H
 
 // includes ingredients
 class Stock {

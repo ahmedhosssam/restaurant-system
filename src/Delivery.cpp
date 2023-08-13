@@ -1,5 +1,4 @@
 #include <vector>
-
 #include "../include/Delivery.h"
 
 Delivery::Delivery(vector<Meal*> mealArr) : Order(mealArr) {

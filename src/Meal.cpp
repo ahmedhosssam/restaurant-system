@@ -31,8 +31,6 @@ void Meal::updateMealIng() {
         i->getData();
         cout << "--------------\n";
     }
-    /*cout << "Choose ingredient by id: ";
-    cin >> id;*/
     
     cout << "Choose your option:\n"
          << "\t1- Add a new ingredient to the meal.\n"
@@ -102,8 +100,6 @@ void Meal::chooseIngs() {
         catch(const std::invalid_argument& e) {
             cout << "Please enter a valid argument.\n";
         }
-        
-        
     }
 }
 

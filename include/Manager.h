@@ -8,6 +8,7 @@
 #include "Restaurant.h"
 
 using namespace std;
+
 // this class just for layout
 class Manager {
     public:
