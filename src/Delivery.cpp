@@ -3,14 +3,10 @@
 #include "../include/Delivery.h"
 
 Delivery::Delivery(vector<Meal*> mealArr) : Order(mealArr) {
-    calcPrice();
 }
 
 void Delivery::calcPrice() {
-    total_price = 0;
-    for (int i = 0; i < int(mealArr.size()); ++i) {
-        total_price += mealArr[i]->getPrice();
-    }
+    Order::calcPrice();
 
     total_price += 5; // delivery cost
 }
@@ -20,11 +16,15 @@ double Delivery::getPrice() {
 }
 
 void Delivery::printReciept() {
+    total_price = 0;
+    int mealArrSize = static_cast<int>(mealArr.size());
+
     cout << "--------------------------------------" << endl;
-    for (int i = 0; i < int(mealArr.size()); ++i) {
-        total_price += mealArr[i]->getPrice();
-        cout << mealArr[i]->getOrderQuantity() << "\t" << mealArr[i]->getName() << "\t" << "$" << mealArr[i]->getPrice() << endl;
+    for (int i = 0; i < mealArrSize; ++i) {
+        total_price += mealArr[i]->getOrderPrice();
+        cout << mealArr[i]->getOrderQuantity() << "\t" << mealArr[i]->getName() << "\t" << "$" << mealArr[i]->getOrderPrice() << endl;
     }
+    total_price += 5; // Delivery cost
 
     cout << "Delivery cost \t$5\n";
     cout << "----------------\n";
@@ -33,5 +33,4 @@ void Delivery::printReciept() {
 }
 
 Delivery::~Delivery() {
-    //dtor
 }
