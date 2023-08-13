@@ -8,8 +8,6 @@
 class Delivery : public Order {
     public:
         Delivery(vector<Meal*> mealArr);
-        void calcPrice();
-        double getPrice();
         void printReciept();
         virtual ~Delivery();
 
