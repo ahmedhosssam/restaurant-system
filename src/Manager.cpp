@@ -83,8 +83,7 @@ void Manager::meal() {
     while (c != 0) {
         cout << "Meal: \n\n"
              << "  1. Add meal to the menu\n"
-             << "  2. Update meal price\n"
-             << "  3. Delete meal from menu\n"
+             << "  2. Delete meal from menu\n"
              << "  0. Return \n"
              << "\nEnter your choice: ";
 
@@ -97,14 +96,12 @@ void Manager::meal() {
                 break;
             case 2:
                 system("clear");
-                break;
-            case 3:
-                system("clear");
+                r.deleteMeal();
                 break;
             case 0:
                 return;
             default:
-                cout << "\nInvalid input! Please try again...";
+                cout << "\nInvalid input, Please try again...";
                 sleep(3);
         }
     }

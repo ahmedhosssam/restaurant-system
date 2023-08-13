@@ -159,8 +159,24 @@ void Restaurant::addMeal(Meal* m) {
     m1->add_meal(m);
 }
 
-void Restaurant::deleteMeal(int i) {
-    m1->deleteMeal(i);
+void Restaurant::deleteMeal() {
+    int id;
+    m1->display_all();
+
+    while (true) {
+        if (m1->getMealsNumber() == 0) {
+            cout << "There's no meals right now.\n";
+            break;
+        }
+
+        cout << "Choose the meal that you want to delete: "; cin >> id;
+        if(id < m1->getMealsNumber() && id >= 0) {
+            m1->deleteMeal(id);
+            break;
+        } else {
+            cout << "Please enter a valid number.\n";
+        }
+    }
 }
 
 Restaurant::~Restaurant() {

@@ -32,7 +32,7 @@ class Restaurant {
     void update_ingredient(int i);
     void delete_ingredient();
     void updateMealIng();
-    void deleteMeal(int i);
+    void deleteMeal();
     void getOrdersReports();
     void getMealsReports();
     double getTotalRevenue();
