@@ -61,7 +61,7 @@ void Ingredient::update_ing_in_txt() {
     } else {
         cout << "Failed to open ingredients file\n";
     }
-
+    file.close();
 }
 
 istream& operator >> (istream& in ,Ingredient* i) {

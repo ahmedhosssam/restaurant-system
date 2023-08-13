@@ -6,23 +6,25 @@ using namespace std;
 #include "../include/Stock.h"
 
 Stock::Stock() {
-    ifstream ingredients("data/ingredients.txt");
+    //ifstream ifile("data/ingredients.txt"); // file of ingredients data
+    fstream file("data/start_ing.txt"); // reading starting data for ingredients
 
     string line;
     string i_name;
-    int i_price;
-    int i_quantity;
+    double i_price;
+    double i_quantity;
 
-    while (getline(ingredients, line)) {
+    while (getline(file, line)) {
 
-        if (ingredients >> i_name >> i_price >> i_quantity) {
+        // to read 
+        if (file >> i_name >> i_price >> i_quantity) {
             Ingredient* i = new Ingredient(i_name, i_price, i_quantity);
             ingList.push_back(i);
         } else {
             continue;
         }
     }
-    ingredients.close();
+    file.close();
 }
 
 void Stock::add_ingredient() {
