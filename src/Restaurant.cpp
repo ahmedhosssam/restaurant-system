@@ -36,7 +36,7 @@ void Restaurant::makeOrder() {
     while (true) {
         cout << "Select a meal by its number: ";
         cin >> option;
-        if (option > m1->getMealsNumber()) {
+        if (option >= m1->getMealsNumber()) {
             cout << "\n<<-- Please enter a valid number -->>\n\n";
             continue;
         }
