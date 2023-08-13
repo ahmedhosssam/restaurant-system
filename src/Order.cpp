@@ -10,6 +10,9 @@ using namespace std;
 Order::Order(vector<Meal*> mealArr) : mealArr(mealArr) {
     total_price = 0;
     calcPrice();
+    for (Meal* m : mealArr) {
+        m->updateStockIngs();
+    }
 }
 
 void Order::calcPrice() {

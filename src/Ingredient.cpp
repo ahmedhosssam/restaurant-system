@@ -77,7 +77,7 @@ ostream& operator << (ostream& out,Ingredient& i) {
 }
 
 void Ingredient::reduceQuantity() {
-    quantity--;
+    --quantity;
 }
 
 Ingredient::~Ingredient() {

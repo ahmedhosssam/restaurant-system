@@ -146,6 +146,12 @@ void Meal::updateQuantity(int q) {
     calcOrderPrice();
 }
 
+void Meal::updateStockIngs() {
+    for (Ingredient* i : inglist) {
+        i->reduceQuantity();
+    }
+}
+
 ostream& operator << (ostream& out, Meal& i) {
     i.getData();
     return out;

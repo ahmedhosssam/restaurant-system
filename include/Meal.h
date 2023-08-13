@@ -23,6 +23,7 @@ class Meal {
         void updateQuantity(int q);
         int getOrderQuantity();
         void setQuantity(int q);
+        void updateStockIngs();
         int getQuantity();
         double getPrice();
         double getOrderPrice();
