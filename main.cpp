@@ -14,7 +14,7 @@ int main() {
              << "  1. Kitchen" << endl
              << "  2. Make Order" << endl
              << "  3. Display Menu" << endl
-             << "  4. Report" << endl
+             << "  4. Reports" << endl
              << "  0. Exit" << endl
              << "Enter your choice: ";
 
