@@ -12,6 +12,7 @@ class Ingredient {
         void setData();
         void getData();
         void update_quantity();
+        void update_quantity(int q);
         void update_price();
         void reduceQuantity();
         int getID();

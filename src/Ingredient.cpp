@@ -42,6 +42,10 @@ void Ingredient::update_quantity() {
     cin >> quantity;
 }
 
+void Ingredient::update_quantity(int q) {
+    quantity -= q;
+}
+
 void Ingredient::update_price() {
     cout << "\nEdit Ingredient price: \n\n"
         << "  Enter new price: ";

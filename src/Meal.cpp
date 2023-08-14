@@ -152,6 +152,10 @@ void Meal::updateQuantity(int q) {
     orderQuantity = q;  // quantity in order
     quantity -= q; // update quantity available in the stock
     calcOrderPrice();
+
+    for (Ingredient* i : inglist) {
+        i->update_quantity(q);
+    }
 }
 
 void Meal::updateStockIngs() {
