@@ -11,7 +11,9 @@ Meal::Meal(string name, int quantity, Stock* s) : name(name), quantity(quantity)
 Meal::Meal(Stock* s) : ptr_s(s) {
     string name;
     int quantity;
-    cout << "Enter the name of the meal: "; cin >> name;
+    cout << "Enter the name of the meal: "; 
+    cin.ignore();
+    getline(cin, name);
     cout << "Enter the quantity of the meal: "; cin >> quantity;
     Meal::name = name;
     Meal::quantity = quantity;
