@@ -7,6 +7,7 @@
 using namespace std;
 
 int main() {
+	system("clear");
     int c = -1;
     Manager a; // for layout
     while (c != 0) {

@@ -1,5 +1,6 @@
 #include <fstream>
 #include "../include/Ingredient.h"
+#include "../include/general.h"
 
 Ingredient::Ingredient() {
     setData();
@@ -22,10 +23,12 @@ void Ingredient::setData() {
     getline(cin, name);
 
     cout << "  Enter quantity: ";
-    cin >> quantity;
+    int q = getInt(); 
+    quantity = q;
 
     cout << "  Enter price: ";
-    cin >> price;
+    int p = getInt();
+    price = p;
 }
 
 
