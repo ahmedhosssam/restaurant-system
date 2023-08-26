@@ -12,6 +12,11 @@ int getInt() {
             size_t pos;
             result = stod(input, &pos);
 
+            if (result < 0) {
+                cout << "Invalid input, please enter a number greater than 0: ";
+                continue;
+            }
+
             if (pos == input.size()) {
                 // Convesion is successful
                 break;

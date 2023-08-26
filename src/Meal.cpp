@@ -1,5 +1,6 @@
 #include <iostream>
 #include "../include/Meal.h"
+#include "../include/general.h"
 
 using namespace std;
 
@@ -10,13 +11,17 @@ Meal::Meal(string name, int quantity, Stock* s) : name(name), quantity(quantity)
 
 Meal::Meal(Stock* s) : ptr_s(s) {
     string name;
-    int quantity;
+    int q;
     cout << "Enter the name of the meal: "; 
     cin.ignore();
     getline(cin, name);
-    cout << "Enter the quantity of the meal: "; cin >> quantity;
+
+    cout << "Enter the quantity of the meal: "; 
+    q = getInt();
+    
     Meal::name = name;
-    Meal::quantity = quantity;
+    Meal::quantity = q;
+
     chooseIngs();
     calcPrice();
 }
