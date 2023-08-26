@@ -22,6 +22,7 @@ int getInt() {
                 break;
             } else {
                 cerr << "Invalid input, please try again: ";
+                continue;
             }
         }
         catch (const std::invalid_argument& e)

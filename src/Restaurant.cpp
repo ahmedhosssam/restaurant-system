@@ -11,6 +11,7 @@
 #include "../include/Menu.h"
 #include "../include/Ingredient.h"
 #include "../include/Table.h"
+#include "../include/general.h"
 
 using namespace std;
 
@@ -35,7 +36,8 @@ void Restaurant::makeOrder() {
 
     while (true) {
         cout << "Select a meal by its number: ";
-        cin >> option;
+        option = getInt();
+
         if (option >= m1->getMealsNumber()) {
             cout << "\n<<-- Please enter a valid number -->>\n\n";
             continue;
@@ -43,7 +45,7 @@ void Restaurant::makeOrder() {
 
         Meal* currentMeal = m1->getMeal(option);
         cout << "Enter quantity: ";
-        cin >> quantity;
+        quantity = getInt();
 
         if (quantity <= 0 || quantity > currentMeal->getQuantity()) {
             cout << "\n<<-- Invalid quantity. Available quantity for a '" << currentMeal->getName() << "' is " << currentMeal->getQuantity() << " -->>\n\n" << endl;
@@ -51,7 +53,6 @@ void Restaurant::makeOrder() {
         }
 
         currentMeal->updateQuantity(quantity);
-
         mealList.push_back(currentMeal);
 
         cout << "Want to add another meal? (y/n): ";
@@ -65,7 +66,7 @@ void Restaurant::makeOrder() {
             cout << "1: Delivery\n";
             cout << "2: Take Away\n";
             cout << "Enter your choice: ";
-            cin >> clientPlace;
+            clientPlace = getInt();
             
             break;
         }
